@@ -164,24 +164,23 @@ class VectorStore:
 
         if missing_titles:
             batch_results = self._batch_fetch_wikipedia_content(missing_titles)
+            all_texts = []
+            all_ids = []
+            all_metadatas = []
             for title, (text, touched) in batch_results.items():
                 normalized_title = title.title()
                 if touched:
                     self.doc_dates[normalized_title] = touched
                 pieces = chunk_text(text, max_words=80)
-                new_chunks = [
-                    Chunk(chunk_id=f"{normalized_title}::{i}", doc_title=normalized_title, text=piece)
-                    for i, piece in enumerate(pieces)
-                ]
-                texts = [c.text for c in new_chunks]
-                ids = [c.chunk_id for c in new_chunks]
-                metadatas = [
-                    {"doc_title": c.doc_title, "chunk_id": c.chunk_id, "date": self.doc_dates.get(c.doc_title, "")}
-                    for c in new_chunks
-                ]
-                embeddings = self._embed(texts)
-                self.collection.add(embeddings=embeddings.tolist(), documents=texts, metadatas=metadatas, ids=ids)
-                loaded += 1
+                for i, piece in enumerate(pieces):
+                    all_texts.append(piece)
+                    chunk_id = f"{normalized_title}::{i}"
+                    all_ids.append(chunk_id)
+                    all_metadatas.append({"doc_title": normalized_title, "chunk_id": chunk_id, "date": self.doc_dates.get(normalized_title, "")})
+            if all_texts:
+                embeddings = self._embed(all_texts)
+                self.collection.add(embeddings=embeddings.tolist(), documents=all_texts, metadatas=all_metadatas, ids=all_ids)
+                loaded = len(batch_results)
 
         # Step 3: Sync local files from target directory
         if os.path.exists(folder):
