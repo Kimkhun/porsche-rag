@@ -360,10 +360,10 @@ h1, h2, h3, .syncopate {{
     box-shadow: none !important;
 }}
 [data-testid="stChatInput"] div, [data-testid="stChatInput"] div div {{
-    background-color: transparent !important;
-    background: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
+    background-color: transparent;
+    background: transparent;
+    border: none;
+    box-shadow: none;
 }}
 div:has(> [data-testid="stChatInput"]) {{ 
     max-width: 950px !important; 
@@ -374,24 +374,37 @@ div:has(> [data-testid="stChatInput"]) {{
     border: none !important; 
     background: transparent !important;
 }}
-[data-testid="stChatInput"] textarea {{ 
+/* Style the outer wrapper div holding both the text area and send button */
+[data-testid="stChatInput"] > div {{
     background: rgba(23, 28, 36, 0.95) !important; 
-    color: #fff !important; 
     border: 1px solid {BORDER} !important; 
     border-radius: 12px !important; 
-    padding: 16px 20px !important; 
-    font-size: 15px !important; 
+    padding: 6px 12px !important; 
     backdrop-filter: blur(10px);
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4) !important;
     transition: all 0.3s ease !important;
+    display: flex !important;
+    align-items: center !important;
+}}
+[data-testid="stChatInput"] > div:focus-within {{
+    border-color: {ACCENT_RED} !important; 
+    box-shadow: 0 0 0 2px rgba(255, 42, 59, 0.2), 0 10px 40px rgba(0, 0, 0, 0.4) !important; 
+}}
+[data-testid="stChatInput"] textarea {{ 
+    background: transparent !important; 
+    color: #fff !important; 
+    border: none !important; 
+    box-shadow: none !important;
+    padding: 10px 12px !important; 
+    font-size: 15px !important; 
 }}
 [data-testid="stChatInput"] textarea::placeholder {{
     color: #8e99a8 !important;
     opacity: 0.85 !important;
 }}
 [data-testid="stChatInput"] textarea:focus {{ 
-    border-color: {ACCENT_RED} !important; 
-    box-shadow: 0 0 0 2px rgba(255, 42, 59, 0.2), 0 10px 40px rgba(0, 0, 0, 0.4) !important; 
+    box-shadow: none !important; 
+    border: none !important;
 }}
 [data-testid="stChatInput"] button {{ 
     background: {R_GRADIENT} !important; 
@@ -399,6 +412,8 @@ div:has(> [data-testid="stChatInput"]) {{
     color: white !important;
     box-shadow: {R_GLOW};
     transition: transform 0.2s ease, opacity 0.2s ease !important;
+    margin-left: 8px !important;
+    position: static !important; /* Forces it to sit in line next to text */
 }}
 [data-testid="stChatInput"] button:hover {{
     transform: scale(1.05);
@@ -611,9 +626,14 @@ if "initialized" not in st.session_state:
         update_loading_status(2, "Syncing Document Corpus", "Scanning local document directory and updating collection registry...")
         store.sync_with_folder(DATA_FOLDER)
         
-        # Get docs (Cached resource)
+        # Get docs dynamically from ChromaDB metadata
         update_loading_status(3, "Loading Document Metadata", "Rebuilding memory mapping and loading titles...")
-        docs = get_cached_docs()
+        try:
+            existing_data = store.collection.get()
+            unique_titles = sorted(list({meta["doc_title"] for meta in existing_data.get("metadatas", []) if meta and "doc_title" in meta}))
+            docs = [{"title": title} for title in unique_titles]
+        except Exception:
+            docs = []
         chunks = store.collection.count()
         
         # Load cross encoder models (Cached resource)
@@ -635,7 +655,12 @@ if "initialized" not in st.session_state:
         st.stop()
 else:
     store = get_vector_store()
-    docs = get_cached_docs()
+    try:
+        existing_data = store.collection.get()
+        unique_titles = sorted(list({meta["doc_title"] for meta in existing_data.get("metadatas", []) if meta and "doc_title" in meta}))
+        docs = [{"title": title} for title in unique_titles]
+    except Exception:
+        docs = []
     chunks = store.collection.count()
 
 with st.sidebar:
@@ -730,21 +755,34 @@ if prompt := st.chat_input("Ask about model specs, lap times, engineering..."):
 
     placeholder = st.empty()
     full = ""
+    token_count = 0
     with st.spinner("Synthesizing answer..."):
         stream = llm_answer_stream(prompt, retrieved, history=hist, doc_dates=store.doc_dates)
         for token in stream:
             full += token
-            placeholder.markdown(
-                f'<div class="msg assistant">'
-                f'<div class="av a">{ASSISTANT_SVG}</div>'
-                f'<div class="bubble a">{full}</div>'
-                f'</div>',
-                unsafe_allow_html=True,
-            )
+            token_count += 1
+            if token_count % 4 == 0:
+                placeholder.markdown(
+                    f'<div class="msg assistant">'
+                    f'<div class="av a">{ASSISTANT_SVG}</div>'
+                    f'<div class="bubble a">{full}</div>'
+                    f'</div>',
+                    unsafe_allow_html=True,
+                )
     t4 = time.perf_counter()
 
     sources_html = render_sources(retrieved, rerank)
-    timings_content = f"rewrite: {t2-t1:.2f}s · retrieve: {t3-t2:.2f}s · generate: {t4-t3:.2f}s · total: {t4-t0:.2f}s"
+    t_q = getattr(store, "last_query_timings", {})
+    t_embed = t_q.get("embed", 0.0)
+    t_chroma = t_q.get("chroma", 0.0)
+    t_bm25 = t_q.get("bm25", 0.0)
+    t_rerank = t_q.get("rerank", 0.0)
+    
+    timings_content = (
+        f"rewrite: {t2-t1:.2f}s · "
+        f"retrieve: {t3-t2:.2f}s [embed-api: {t_embed:.2f}s | vector-db: {t_chroma:.2f}s | bm25: {t_bm25:.2f}s | rerank-cpu: {t_rerank:.2f}s] · "
+        f"generate: {t4-t3:.2f}s · total: {t4-t0:.2f}s"
+    )
     timings_html = (
         f'<div class="telemetry-row">'
         f'<span class="telemetry-tag">Telemetry</span>'

@@ -2,7 +2,10 @@ import json
 import math
 import os
 import functools
-from typing import Dict, List, Tuple
+import time
+import urllib.request
+import urllib.parse
+from typing import Dict, List, Tuple, Optional
 
 import numpy as np
 import chromadb
@@ -11,8 +14,41 @@ from google import genai
 from .ingest import Chunk, chunk_text, _extract_date, _batch_fetch_wikipedia_dates
 
 PROJECT_ID = "project-bc66562d-f62f-4bdd-91e"
-LOCATION = "global"
+LOCATION = "asia-southeast1"
 INDEX_DIR = os.path.join(os.path.dirname(__file__), "..", "data", "index")
+
+CORE_WIKIPEDIA_TITLES = [
+    "Car Engineer of the Century", "Ernst Fuhrmann", "Erwin Komenda", "European delivery",
+    "Ferdinand Alexander Porsche", "Ferdinand Piëch", "Ferdinand Porsche", "Ferry Porsche",
+    "Gemballa", "List of Porsche concept vehicles", "List of Porsche vehicles", "Lohner-Porsche",
+    "Louise Piëch", "Michael Mauer", "Need for Speed Porsche Unleashed", "Porsche",
+    "Porsche 3512", "Porsche 356", "Porsche 3561", "Porsche 3562", "Porsche 356SL",
+    "Porsche 360", "Porsche 547 engine", "Porsche 550", "Porsche 597", "Porsche 64",
+    "Porsche 645", "Porsche 718", "Porsche 718 Boxster and Cayman 982", "Porsche 753 engine",
+    "Porsche 804", "Porsche 901", "Porsche 904", "Porsche 906", "Porsche 907", "Porsche 908",
+    "Porsche 909 Bergspyder", "Porsche 910", "Porsche 911", "Porsche 911 GT1",
+    "Porsche 911 GT2", "Porsche 911 GT3", "Porsche 911 RSR", "Porsche 911 classic",
+    "Porsche 912", "Porsche 914-6 GT", "Porsche 914", "Porsche 917", "Porsche 918 Spyder",
+    "Porsche 919 Hybrid", "Porsche 924", "Porsche 928", "Porsche 930", "Porsche 934",
+    "Porsche 935", "Porsche 936", "Porsche 944", "Porsche 953", "Porsche 959",
+    "Porsche 961", "Porsche 962", "Porsche 963", "Porsche 964", "Porsche 968",
+    "Porsche 984", "Porsche 989", "Porsche 991", "Porsche 992", "Porsche 993",
+    "Porsche 996", "Porsche 997", "Porsche B32", "Porsche Boxster 986", "Porsche Boxster and Cayman",
+    "Porsche Boxster and Cayman 981", "Porsche Boxster and Cayman 987", "Porsche C88",
+    "Porsche Carrera Cup", "Porsche Carrera Cup Germany", "Porsche Carrera GT",
+    "Porsche Cayenne", "Porsche Cayman", "Porsche Cayman GT4", "Porsche Design",
+    "Porsche Design Tower Stuttgart", "Porsche Design Tower Sunny Isles Beach",
+    "Porsche Engineering", "Porsche Formula E Team", "Porsche Holding", "Porsche Junior",
+    "Porsche LMP1-98", "Porsche Macan", "Porsche Mission E", "Porsche Museum",
+    "Porsche Panamera", "Porsche RS Spyder", "Porsche Rennsport Reunion", "Porsche SE",
+    "Porsche Supercup", "Porsche Taycan", "Porsche Unseen", "Porsche V10 engine",
+    "Porsche V8 engines", "Porsche VIN specification", "Porsche Vision 357",
+    "Porsche Vision 357 Speedster", "Porsche Vision Gran Turismo", "Porsche WSC95",
+    "Porsche family", "Porsche flateight engines", "Porsche flatsix engine",
+    "Porsche flattwelve engine", "Porsche in motorsport", "Porsche type numbers",
+    "Ruf Automobile", "Singer Vehicle Design", "VarioCam", "VarioRam",
+    "Volkswagen Beetle", "Wendelin Wiedeking", "Wolfgang Porsche"
+]
 
 
 @functools.lru_cache(maxsize=1)
@@ -51,76 +87,154 @@ class VectorStore:
         ]
         self.collection.add(embeddings=embeddings.tolist(), documents=texts, metadatas=metadatas, ids=ids)
 
+    def _batch_fetch_wikipedia_content(self, titles: List[str]) -> Dict[str, Tuple[str, str]]:
+        results = {}
+        for i in range(0, len(titles), 20):
+            batch = titles[i : i + 20]
+            titles_str = "|".join(urllib.parse.quote(t.replace(" ", "_")) for t in batch)
+            api = (
+                "https://en.wikipedia.org/w/api.php?"
+                "action=query&prop=extracts|info&explaintext&exlimit=max&titles={}&format=json&formatversion=2"
+            ).format(titles_str)
+            try:
+                req = urllib.request.Request(api, headers={'User-Agent': 'Mozilla/5.0'})
+                with urllib.request.urlopen(req, timeout=15) as resp:
+                    data = json.loads(resp.read())
+                pages = data.get("query", {}).get("pages", [])
+                for page in pages:
+                    if page.get("missing"):
+                        continue
+                    title_name = page.get("title")
+                    text = page.get("extract", "").strip()
+                    touched = page.get("touched", "")[:10]
+                    if title_name and text:
+                        results[title_name] = (text, touched)
+            except Exception:
+                pass
+        return results
+
     def sync_with_folder(self, folder: str) -> int:
         registry = self._load_registry()
         current = {}
         loaded = 0
 
-        filenames = sorted(os.listdir(folder))
-        titles = []
-        for fn in filenames:
-            ext = os.path.splitext(fn)[1].lower()
-            if ext in (".txt", ".pdf"):
-                titles.append(os.path.splitext(fn)[0].replace("_", " "))
-        _batch_fetch_wikipedia_dates(titles)
+        # Step 1: Query ChromaDB to see what is already indexed
+        try:
+            existing_data = self.collection.get()
+            indexed_titles = {
+                meta["doc_title"] 
+                for meta in existing_data.get("metadatas", []) 
+                if meta and "doc_title" in meta
+            }
+        except Exception:
+            indexed_titles = set()
 
-        for filename in filenames:
-            ext = os.path.splitext(filename)[1].lower()
-            if ext not in (".txt", ".pdf"):
+        # Step 2: Fetch any missing Wikipedia pages from the API in batches
+        missing_titles = []
+        for title in CORE_WIKIPEDIA_TITLES:
+            normalized_title = title.title()
+            if normalized_title in indexed_titles:
+                # Also restore doc_dates cache from metadata
+                if normalized_title not in self.doc_dates:
+                    try:
+                        matching = self.collection.get(where={"doc_title": normalized_title}, limit=1)
+                        if matching["metadatas"]:
+                            dt = matching["metadatas"][0].get("date", "")
+                            if dt:
+                                self.doc_dates[normalized_title] = dt
+                    except Exception:
+                        pass
                 continue
-            path = os.path.join(folder, filename)
-            mtime = os.path.getmtime(path)
-            current[filename] = mtime
+            missing_titles.append(title)
 
-            if filename in registry and registry[filename] == mtime:
-                continue
+        if missing_titles:
+            batch_results = self._batch_fetch_wikipedia_content(missing_titles)
+            for title, (text, touched) in batch_results.items():
+                normalized_title = title.title()
+                if touched:
+                    self.doc_dates[normalized_title] = touched
+                pieces = chunk_text(text, max_words=80)
+                new_chunks = [
+                    Chunk(chunk_id=f"{normalized_title}::{i}", doc_title=normalized_title, text=piece)
+                    for i, piece in enumerate(pieces)
+                ]
+                texts = [c.text for c in new_chunks]
+                ids = [c.chunk_id for c in new_chunks]
+                metadatas = [
+                    {"doc_title": c.doc_title, "chunk_id": c.chunk_id, "date": self.doc_dates.get(c.doc_title, "")}
+                    for c in new_chunks
+                ]
+                embeddings = self._embed(texts)
+                self.collection.add(embeddings=embeddings.tolist(), documents=texts, metadatas=metadatas, ids=ids)
+                loaded += 1
 
-            title = os.path.splitext(filename)[0].replace("_", " ").title()
-            text = None
-            if ext == ".txt":
-                with open(path, "r", encoding="utf-8") as f:
-                    text = f.read().strip()
-            elif ext == ".pdf":
-                try:
-                    from pypdf import PdfReader
-                    reader = PdfReader(path)
-                    text = "\n".join(page.extract_text() or "" for page in reader.pages).strip()
-                except Exception:
+        # Step 3: Sync local files from target directory
+        if os.path.exists(folder):
+            filenames = sorted(os.listdir(folder))
+            titles = []
+            for fn in filenames:
+                ext = os.path.splitext(fn)[1].lower()
+                if ext in (".txt", ".pdf"):
+                    titles.append(os.path.splitext(fn)[0].replace("_", " "))
+            _batch_fetch_wikipedia_dates(titles)
+
+            for filename in filenames:
+                ext = os.path.splitext(filename)[1].lower()
+                if ext not in (".txt", ".pdf"):
+                    continue
+                path = os.path.join(folder, filename)
+                mtime = os.path.getmtime(path)
+                current[filename] = mtime
+
+                if filename in registry and registry[filename] == mtime:
                     continue
 
-            if not text:
-                continue
+                title = os.path.splitext(filename)[0].replace("_", " ").title()
+                text = None
+                if ext == ".txt":
+                    with open(path, "r", encoding="utf-8") as f:
+                        text = f.read().strip()
+                elif ext == ".pdf":
+                    try:
+                        from pypdf import PdfReader
+                        reader = PdfReader(path)
+                        text = "\n".join(page.extract_text() or "" for page in reader.pages).strip()
+                    except Exception:
+                        continue
 
-            doc_date = _extract_date(filename, text or "")
-            if doc_date:
-                self.doc_dates[title] = doc_date
-            self.collection.delete(where={"doc_title": title})
-            pieces = chunk_text(text, max_words=80)
-            new_chunks = [
-                Chunk(chunk_id=f"{title}::{i}", doc_title=title, text=piece)
-                for i, piece in enumerate(pieces)
-            ]
-            texts = [c.text for c in new_chunks]
-            ids = [c.chunk_id for c in new_chunks]
-            metadatas = [
-                {"doc_title": c.doc_title, "chunk_id": c.chunk_id, "date": self.doc_dates.get(c.doc_title, "")}
-                for c in new_chunks
-            ]
-            embeddings = self._embed(texts)
-            self.collection.add(embeddings=embeddings.tolist(), documents=texts, metadatas=metadatas, ids=ids)
-            loaded += 1
+                if not text:
+                    continue
 
-        for filename in filenames:
-            ext = os.path.splitext(filename)[1].lower()
-            if ext not in (".txt", ".pdf"):
-                continue
-            title = os.path.splitext(filename)[0].replace("_", " ").title()
-            if title not in self.doc_dates:
-                existing = self.collection.get(where={"doc_title": title}, limit=1)
-                if existing["metadatas"]:
-                    dt = existing["metadatas"][0].get("date", "") or ""
-                    if dt:
-                        self.doc_dates[title] = dt
+                doc_date = _extract_date(filename, text or "")
+                if doc_date:
+                    self.doc_dates[title] = doc_date
+                self.collection.delete(where={"doc_title": title})
+                pieces = chunk_text(text, max_words=80)
+                new_chunks = [
+                    Chunk(chunk_id=f"{title}::{i}", doc_title=title, text=piece)
+                    for i, piece in enumerate(pieces)
+                ]
+                texts = [c.text for c in new_chunks]
+                ids = [c.chunk_id for c in new_chunks]
+                metadatas = [
+                    {"doc_title": c.doc_title, "chunk_id": c.chunk_id, "date": self.doc_dates.get(c.doc_title, "")}
+                    for c in new_chunks
+                ]
+                embeddings = self._embed(texts)
+                self.collection.add(embeddings=embeddings.tolist(), documents=texts, metadatas=metadatas, ids=ids)
+                loaded += 1
+
+            for filename in filenames:
+                ext = os.path.splitext(filename)[1].lower()
+                if ext not in (".txt", ".pdf"):
+                    continue
+                title = os.path.splitext(filename)[0].replace("_", " ").title()
+                if title not in self.doc_dates:
+                    existing = self.collection.get(where={"doc_title": title}, limit=1)
+                    if existing["metadatas"]:
+                        dt = existing["metadatas"][0].get("date", "") or ""
+                        if dt:
+                            self.doc_dates[title] = dt
 
         if loaded > 0:
             self._rebuild_bm25()
@@ -143,7 +257,7 @@ class VectorStore:
             json.dump(registry, f, indent=2)
 
     def query(self, query_text: str, top_k: int = 3, rerank: bool = True, hybrid: bool = True) -> List[Tuple[Chunk, float]]:
-        fetch_k = min(top_k * 5, self.collection.count() or 1)
+        fetch_k = min(top_k * 2, self.collection.count() or 1)
 
         if hybrid and self._bm25_N == 0:
             self._rebuild_bm25()
@@ -153,16 +267,28 @@ class VectorStore:
         else:
             vec_n = fetch_k
 
+        t_start = time.perf_counter()
         query_vec = self._embed([query_text])
+        t_after_embed = time.perf_counter()
+        
         results = self.collection.query(
             query_embeddings=query_vec.tolist(),
             n_results=vec_n,
         )
+        t_after_chroma = time.perf_counter()
 
         if not results["ids"] or not results["ids"][0]:
+            self.last_query_timings = {
+                "embed": t_after_embed - t_start,
+                "chroma": t_after_chroma - t_after_embed,
+                "bm25": 0.0,
+                "rerank": 0.0,
+                "total": t_after_chroma - t_start
+            }
             return []
 
         out: List[Tuple[Chunk, float]] = []
+        t_bm25_start = time.perf_counter()
         if hybrid and self._bm25_N > 0:
             query_tokens = query_text.lower().split()
             bm25_scores = self._bm25_scores(query_tokens)
@@ -220,9 +346,22 @@ class VectorStore:
                           text=results["documents"][0][i]),
                     float(results["distances"][0][i]),
                 ))
+        t_bm25_end = time.perf_counter()
 
+        t_rerank_start = time.perf_counter()
+        rerank_active = False
         if rerank and len(out) > 1:
             out = self._rerank(query_text, out, top_k)
+            rerank_active = True
+        t_rerank_end = time.perf_counter()
+        
+        self.last_query_timings = {
+            "embed": t_after_embed - t_start,
+            "chroma": t_after_chroma - t_after_embed,
+            "bm25": t_bm25_end - t_bm25_start if (hybrid and self._bm25_N > 0) else 0.0,
+            "rerank": t_rerank_end - t_rerank_start if rerank_active else 0.0,
+            "total": time.perf_counter() - t_start
+        }
         return out[:top_k]
 
     def _rebuild_bm25(self) -> None:

@@ -1,5 +1,0 @@
-VarioRam is a Porsche-patented engine induction system that was first introduced on the 1992 model year 964 Carrera RS motorsport special. It became standard on the 911 series starting from the M64/21 engine on the model year 1996.
-As the name suggests, VarioRam varies the effective length of the inlet ducting depending upon engine load and speed. A long intake length at low rpm provides a better pulse tune because the pulse won't travel back and forth as many times, which aids low-end torque because the high pressure pulse may otherwise contribute to reversion and thereby decreased volumetric efficiency. At higher engine RPM, the intake length is reduced. The result is a flatter torque curve, with more torque available at low- and mid-range engine speeds compared to a similar non-VarioRam engine.
-
-
-== References ==

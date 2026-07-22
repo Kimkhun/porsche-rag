@@ -6,8 +6,16 @@ from google import genai
 from .ingest import Chunk
 
 PROJECT_ID = "project-bc66562d-f62f-4bdd-91e"
-LOCATION = "global"
+LOCATION = "asia-southeast1"
 MAX_HISTORY = 999
+
+_CLIENT = None
+
+def _get_client():
+    global _CLIENT
+    if _CLIENT is None:
+        _CLIENT = genai.Client(vertexai=True, project=PROJECT_ID, location=LOCATION)
+    return _CLIENT
 
 
 def _format_history(history: List[dict]) -> str:
@@ -47,7 +55,7 @@ def _build_llm_prompt(query: str, retrieved: List[Tuple[Chunk, float]], history:
 
 
 def rewrite_search_query(raw_query: str, history: List[dict] = None) -> str:
-    client = genai.Client(vertexai=True, project=PROJECT_ID, location=LOCATION)
+    client = _get_client()
     hist_block = _format_history(history or [])
     prompt = (
         "You are a search query optimizer. Given a conversation and a user's latest question, "
@@ -75,7 +83,7 @@ def llm_answer(query: str, retrieved: List[Tuple[Chunk, float]], history: List[d
     if not retrieved:
         return "No relevant passages were found to answer that query."
     prompt = _build_llm_prompt(query, retrieved, history, doc_dates)
-    client = genai.Client(vertexai=True, project=PROJECT_ID, location=LOCATION)
+    client = _get_client()
     response = client.models.generate_content(model="gemini-3.5-flash", contents=prompt)
     return response.text
 
@@ -85,7 +93,7 @@ def llm_answer_stream(query: str, retrieved: List[Tuple[Chunk, float]], history:
         yield "No relevant passages were found to answer that query."
         return
     prompt = _build_llm_prompt(query, retrieved, history, doc_dates)
-    client = genai.Client(vertexai=True, project=PROJECT_ID, location=LOCATION)
+    client = _get_client()
     stream = client.models.generate_content_stream(model="gemini-3.5-flash", contents=prompt)
     for chunk in stream:
         if chunk.text:
