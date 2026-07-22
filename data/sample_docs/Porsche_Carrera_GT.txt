@@ -1,0 +1,125 @@
+The Porsche Carrera GT (Project Code 980) is a mid-engine sports car that was manufactured by German automobile manufacturer Porsche from 2003 to 2006. Sports Car International named the Carrera GT number one on its list of Top Sports Cars of the 2000s, and number eight on its Top Sports Cars of All Time list. For its advanced technology and development of its chassis, Popular Science magazine awarded it the "Best of What's New" award in 2003.
+
+
+== History ==
+
+The development of the Carrera GT can be traced back to the 911 GT1 and LMP1-98 racing cars. In part due to the FIA and ACO rule changes in 1998, both designs had ended. Porsche at the time had planned a new Le Mans prototype for the 1999 season. The car was initially intended to use a turbocharged flat-six engine, but was later redesigned to use a new V10 engine – based on a unit secretly built by Porsche for the Footwork Formula One team in 1992 – pushing the project back to planned completion in 2000. The LMP 2000 was cancelled in November 1999, with rumours that the car had been cancelled as part of a deal with the Volkswagen Group to collaborate on the Porsche Cayenne, while also allowing Audi to compete at Le Mans without competition from Porsche.
+
+Porsche did keep part of the project alive by using the 5.5 L V10 from the prototype in a concept car called the Carrera GT shown at the 2000 Paris Motor Show, mainly in an attempt to draw attention to their display. Surprising interest in the vehicle and an influx of revenue provided from the Cayenne helped Porsche decide to produce the car, and development started on a road-legal version that would be produced in small numbers at Porsche's new manufacturing facility in Leipzig. Porsche started a production run of the Carrera GT in 2004. The first Carrera GT went on sale in the United States on 31 January 2004.
+Originally a production run of 1,500 cars was planned. However, Porsche announced in August 2005 that it would not continue production of the Carrera GT through to 2006, citing changing airbag regulations in the United States. By the end of production on 6 May 2006, 1,270 cars had been made, with a total of 644 units sold in the United States and 31 units sold in Canada. In the United Kingdom, 49 units were sold.
+
+
+== Design ==
+The Carrera GT is powered by a 5.7 L (5,733 cc) V10 engine rated at 450 kW (612 PS; 603 hp), whereas the original concept car featured a 5.5-litre version rated at 416 kW (566 PS; 558 hp). A road test in June 2004 by Car and Driver showed that the car can accelerate from 0–60 mph (97 km/h) in 3.5 seconds, 0–100 mph (161 km/h) in 6.8 seconds and 0–209 km/h (130 mph) in 10.8 seconds. The official top speed was 330 km/h (205 mph).
+
+The Carrera GT was initially offered with five basic colours: Guards Red, Fayence Yellow, Basalt Black, GT Silver metallic and Seal Grey. Custom colours were later available from the factory. A traditional six-speed manual transmission is the only available transmission.
+The Carrera GT has large side inlets and air dams that help cool the large V10 engine framed by the carbon fibre rear bonnet. Fitted with Porsche's latest Carbon fibre-reinforced Silicon Carbide (C/SiC) ceramic composite braking system, the 15-inch (380 mm) SGL Carbon disc brakes are fitted inside the 19 inch front and 20 inch rear 5-spoke alloy wheels. Similar to other Porsche models, such as the 911, the GT includes an electronically operated rear wing which deploys at speeds above 113 km/h (70 mph).
+The interior is trimmed in soft leather. Bose audio system and a navigation system were standard. In typical Porsche fashion, the ignition is present to the left of the steering wheel. This placement dates back to the early days of Le Mans racing when drivers were required to make a running start, hop into their cars, start them and begin the race. The placement of the ignition enabled the driver to start the car with the left hand and put it in gear with the right. 
+
+
+== Technical specifications ==
+
+Engine
+Layout: Longitudinal, rear mid-engine, rear-wheel-drive layout
+Engine type: 68° V10, aluminium block and heads
+Code: 980/01
+Valvetrain: DOHC (chain-driven), 4 valves per cylinder (40 valves total), variable valve timing on intake camshafts, sodium-cooled exhaust valves
+Bore × stroke: 98 mm × 76 mm (3.86 in × 2.99 in), Nikasil coated bores, forged titanium connecting rods, forged pistons
+Displacement: 5,733 cc (5.7 L; 349.8 cu in)
+Compression ratio: 12.0:1
+Rated power: 450 kW (612 PS; 603 hp) @ 8,000 rpm
+Max. torque: 590 N⋅m (435 lb⋅ft) @ 5,750 rpm
+Specific output: 78.493 kW/L (105 hp/L)
+Weight to power ratio: 3.23 kg/kW (5.31 lb/hp)
+Redline: 8,400 rpm
+Transmission
+Clutch: Twin-plate ceramic dry-clutch (PCCC—Porsche Ceramic Composite Clutch)
+Gearbox type: 6-speed manual transmission
+Body
+Tank capacity: 92 litres
+Cargo volume: 76 L (2.7 cu ft)
+Max. payload: 180 kg (397 lb)
+Ground clearance: 3.4 in (86 mm)
+Dimensions:
+Length: 4,613 mm (182 in)
+Width: 1,921 mm (76 in)
+Height: 1,166 mm (46 in)
+Mass: 1,380 kg (3,042 lb)
+Track width: 1,612–1,587 mm (63–62 in)
+Wheelbase: 2,730 mm (107 in)
+Drag Coefficient: 0.39
+Fuel consumption for 2004 model
+EPA
+EPA Rated city, highway: 9 mpg‑US (26 L/100 km; 11 mpg‑imp)/15 mpg‑US (16 L/100 km; 18 mpg‑imp)
+Range: 241 miles (388 km)
+Tank in gal: 24.3 US gal (92 L; 20 imp gal)
+NEFZ:
+Consumption: 28.3 / 11.7 / 17.8 L/100 km
+CO2 emission: 429 g/km
+Emission level: EURO 4
+Estimated range: 516 km (321 mi)
+Auto Motor und Sport test:
+Max: 22.5 L/100 km
+Avg: 19.7 L/100 km
+
+
+=== Performance Test Results ===
+0–60 km/h (0–37 mph) : 2.06 seconds
+0–80 km/h (0–50 mph) : 2.61 seconds
+0–100 km/h (0–62 mph) : 3.57 seconds
+0–120 km/h (0–75 mph) : 4.33 seconds
+0–140 km/h (0–87 mph) : 5.13 seconds
+0–160 km/h (0–99 mph) : 6.46 seconds
+0–180 km/h (0–112 mph) : 7.59 seconds
+0‒400 m (1⁄4 mi): 10.97 seconds
+0‒1,000 m (0.62 mi): 19.42 seconds at 284 km/h (176.5 mph)
+Top speed: 334 km/h (208 mph) (official: 330 km/h (205 mph))
+80–120 km/h (50–75 mph): 6.35 seconds (in 6th gear)
+Braking 100 mph (161 km/h) to 0: 277 feet (84 m)
+Braking 60 mph (97 km/h) to 0: 101 feet (31 m)
+Braking 100 km/h to 0: 33.5 m
+Skid pad, 200 ft (61 m) ave g: 0.99
+Sport Auto tested a maximal lateral acceleration of 1.35 g, even 1.4 g was reached at the Schwalbenschwanz section of the Nürburgring Nordschleife, Motor Trend tested 11.1s at 133.4 mph (215 km/h) for the 1⁄4 mile (402 m).
+
+
+=== Track tests ===
+Nürburgring Nordschleife: 7:28
+Nürburgring Nordschleife (2024): 7:12
+Bedford Autodrome: 1:20.2
+Top Gear Test Track: 1:19.8
+
+
+== Technology ==
+
+Notable technology includes a pure carbon fibre monocoque and subframe produced by ATR Composites Group of Italy, dry sump lubrication and inboard suspension. At speeds above 113 km/h (70 mph), the electronically operated rear wing raises into the airstream to reduce lift. The radiator of the Carrera GT is about five times the size of that of a 911 Turbo of its time. The car's front and rear suspension system consists of pushrod actuated shock absorbers and dampers with anti-roll bars.
+
+
+== Zagato ==
+
+In 2013, Zagato introduced the Porsche Carrera GTZ based on the Porsche Carrera GT. Commissioned by a Swiss Porsche collector and former racing driver, it has a modified carbon fiber body which is more aerodynamic. The car has the same technical specification as the Porsche Carrera GT. Six Carrera GTZs were built.
+
+
+== Aftermarket ==
+Bring-a-Trailer brought a 250-mile 2005 Silver GT sold for USD $2,000,000 on 18 January 2022 
+BaT also sold Jerry Seinfeld's black GT for USD $1,865,000 In March 2022
+In June 2023 Broad Arrow's Porsche 75th Anniversary Auction sold a GT Silver Metallic example for $1,028,000 and a Speedster Blue for $1,462,500 
+At Broad Arrow's 2023 Amelia Auction, a black GT sold for $1,517,500 
+28 February 2025 at RMSothe GT #0994 sold for 1,545,000 USD 
+In September 2025, BaT sold a 1,800-mile silver GT for $1,921,000 
+
+
+== References ==
+
+
+=== Notes ===
+
+
+=== Bibliography ===
+
+
+== External links ==
+
+Porsche official website
+Final Carrera GT Produced
+Past master: Porsche Carrera GT
+2024 video review by auto journalist Doug DeMuro after he purchased one for himself.

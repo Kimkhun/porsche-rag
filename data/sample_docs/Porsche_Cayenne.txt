@@ -1,0 +1,174 @@
+The Porsche Cayenne is a series of automobiles manufactured by the German company Porsche since 2002. It is an E-segment luxury crossover SUV, and has been described as both a full-size and a mid-size vehicle. The first generation was known within Porsche as the Type 9PA (955/957) or E1. It was the first V8-engined vehicle built by Porsche since 1995, when the Porsche 928 was discontinued. It is also Porsche's first off-road vehicle since its Super and Junior tractors of the 1950s, as well as the first production Porsche with four doors. Since 2014, the Cayenne has been sold alongside a smaller Porsche SUV, the Macan.
+The second-generation Cayenne (Type 92A or E2) was unveiled at the 2010 Geneva Motor Show in March. The Cayenne shares its platform, body frame, doors, and electronics with the Volkswagen Touareg and Audi Q7, and to some extent with the Lamborghini Urus and Bentley Bentayga. It received a facelift in 2014 with minor external changes, and introduced a new plug-in E-Hybrid version with its public launch at the Paris Motor Show. Since 2008, all combustion engines in the Cayenne range have featured direct injection technology. The third generation (Type 9YA or E3) was unveiled in August 2017 in Stuttgart, Germany, and received a mid-cycle refresh in 2023.
+The Cayenne has been Porsche's best-selling model since the fourth generation of the Macan transitioned to electric-only in many markets, with global deliveries reaching 102,889 units in 2024, an 18% increase over 2023. The fourth generation (Type X1A/X1B or E4), unveiled in November 2025 and entering production in February 2026, is the first Cayenne offered exclusively with a battery-electric powertrain, marketed as the Cayenne Electric. It is built on the Premium Platform Electric (PPE) architecture shared with the second-generation Macan.
+
+
+== First generation (E1 9PA; 2002) ==
+
+The original Porsche Cayenne entered the global market to a mixed reception, but proved itself to have excellent performance for an SUV with comparably good handling and powerful engines. The lineup initially consisted of the V8-powered Cayenne S and Cayenne Turbo. Later in the model cycle, VR6 and diesel-powered versions joined the lineup. In the eight model years of the E1 generation, a total of 276,652 units were produced. The name Cayenne was coined by Manfred Gotta.
+The base model Cayenne is powered by a 3.2-litre VR6 engine producing 250 PS (184 kW; 247 hp). The intake manifold is unique to Porsche, but otherwise the engine is largely the same as the Volkswagen unit. Acceleration from 0–100 km/h (0–62 mph) is 9.1 seconds with the manual transmission and 9.7 seconds with the Tiptronic S.
+
+
+=== Cayenne S ===
+The S in the 955 pre-facelift 9PA is powered by a 4.5-litre V8 engine with a wet-sump lubrication system and variable valve timing. It produces 335 hp (250 kW; 340 PS) and 310 lb⋅ft (420 N⋅m) of torque. Acceleration from 0–60 mph (0–97 km/h) takes 6.9 seconds and the top speed is 150 mph (241 km/h).
+Introduced only for 2006 (as a pre-GTS concept), the Cayenne S Titanium Edition was a one-year exclusive, limited-production SUV featuring a lightweight steel body with an aluminium bonnet lighter than that of the standard Cayenne S, titanium-painted body accents, side lower rocker panels, sport quad-tip exhaust chrome tailpipes, 19-inch titanium-painted alloy wheels, bi-xenon headlights, two-tone interior upholstery, Porsche PCM 2.0 navigation with MP3 audio and Bose surround sound. Sport-tuned suspension, an aerodynamic body package, low-range transfer case, locking differential and a 6-speed automatic Tiptronic S transmission were included. The Cayenne S Titanium Edition is powered by the same 4.5-litre V8 as the Cayenne S, producing 335 hp (250 kW; 340 PS) and 310 lb⋅ft (420 N⋅m) of torque. Acceleration from 0–60 mph (0–97 km/h) is 6.2 seconds and the top speed is 150 mph (241 km/h).
+In the updated 9PA chassis (957) Cayenne S introduced between 2008 and 2010, a direct fuel injection (DFI) 4.8-litre V8 producing 385 PS (283 kW; 380 hp) and 500 N⋅m (370 lb⋅ft) of torque was fitted. The 0–100 km/h (62 mph) time was 6.6 seconds with a top speed of 250 km/h (155 mph). The updated V8 featured VarioCam Plus, combining variable valve timing with two-stage valve lift on the inlet side.
+
+
+=== Cayenne GTS ===
+The E1 Gran Turismo Sport (GTS) was offered only in the updated 9PA chassis between 2008 and 2010. It was the first Porsche of the modern era to carry the GTS designation. Its sports chassis was specially developed for this variant and was powered by a 405 PS (298 kW; 399 hp) 4.8-litre V8. It also featured lowered sports suspension, a sports exhaust system, and 21-inch (533 mm) high-performance wheels as standard, along with an aerodynamic wide-body kit from the factory. A six-speed manual transmission was available as an option.
+The Cayenne GTS had a 0–100 km/h (62 mph) time of 6.1 seconds and a top speed of 253 km/h (157 mph).
+
+
+=== Cayenne Turbo and Turbo S ===
+
+The first-generation 9PA Cayenne Turbo produced 450 PS (331 kW) and can accelerate from 0–100 km/h (62 mph) in 5.6 seconds. A Turbo S version was built in 2006 to compete with the Mercedes-Benz ML 63 AMG. The Cayenne Turbo and Turbo S include a low-range transfer case, a locking differential, and height-adjustable off-road suspension. The Turbo S is powered by a twin-turbocharged 4.5-litre V8 producing 521 PS (383 kW; 514 hp) and 720 N⋅m (530 lb⋅ft) of torque; acceleration from 0–60 mph (97 km/h) takes 5.0 seconds and the top speed is 167 mph (269 km/h); it features a six-speed automatic Tiptronic S transmission.
+
+In 2008 an updated 9PA Turbo model featuring a larger direct fuel injection 4.8-litre V8 engine was revealed at the Beijing Auto Show. It produces 500 PS (368 kW; 493 hp) and can accelerate from 0–60 mph (97 km/h) in 4.9 seconds. Revealed alongside the new Turbo was a new 550 hp (410 kW) Turbo S model. Acceleration from 0–60 mph (97 km/h) for that model takes 4.7 seconds and it was available with optional ceramic composite brakes.
+
+
+=== Cayenne Diesel ===
+The original Cayenne Diesel was available only in the facelifted 9PA chassis, powered by a 3.0-litre V6 VW TDI engine, from February 2009. The engine is rated at 240 PS (177 kW; 237 hp) and 550 N⋅m (410 lb⋅ft) of torque. The car was unveiled at the 2009 Geneva Motor Show. The diesel accelerates from 0–60 mph (97 km/h) in 8.2 seconds.
+
+
+=== Cayenne S Transsyberia ===
+
+The Cayenne S Transsyberia was originally a racing vehicle designed for the Transsyberia rally, of which only 285 were built.
+The street version was built to commemorate Porsche's victory in the Transsyberia rally. It was available only in the 9PA chassis with the 405 hp (302 kW) direct-injection 4.8-litre V8 from the Cayenne GTS. Sales began in January 2009, with a targeted production run of 600 road vehicles worldwide (285 for North America), though far fewer were actually built (102 for the USA, 17 for Canada including 3 with the 6-speed manual).
+
+
+=== Cayenne GTS Porsche Design Edition 3 (2010) ===
+In May 2009, a limited-edition version based on the Cayenne GTS was introduced, designed by Porsche Design Studio and including a Porsche Design chronograph Type P'6612. Production was limited to 1,000 units worldwide.
+
+
+=== Cayenne Concepts ===
+In April 2022, Porsche unveiled a concept open-top Cayenne to the public as part of the model's 20th anniversary. The Cayenne had proved commercially successful, so in December 2002 Porsche designers had assessed the viability of additional body styles. Three alternate shapes were explored: a coupé-style SUV, a convertible SUV, and a longer-wheelbase three-row SUV. Designers developed a two-door, non-drivable convertible Cayenne with two alternate rear designs; the doors were 20 cm (8 in) longer than the standard model and the A-pillar was shorter. Concerns over headroom, boot space, and rear design led to the convertible concept being abandoned. The coupé-style SUV led to the modern Cayenne Coupé, and the longer-wheelbase three-row concept presaged the later Porsche K1.
+
+
+=== Engines ===
+
+
+== Second generation (E2 92A; 2010) ==
+
+The second-generation Porsche Cayenne 92A went on sale in April–May 2010 as a 2011 model, with an official debut at the 2010 Geneva Motor Show. In preparation for the unveiling, the Cayenne production facility in Leipzig, Germany, closed in December 2009 to commence factory retooling for the new model, a process that took two to three months.
+
+The 92A Porsche Cayenne was slightly larger than its predecessor, but featured a more slanted rear window, less upright windshield, a more sloping roofline, door-mounted mirrors, smaller rear windows, headlights inspired by the Carrera GT, taillights extending onto the tailgate, LED daytime running lights, and a vastly redesigned interior similar to the Panamera. The 2011 Cayenne is almost 250 kg (551 lb) lighter than the previous model, largely due to removal of the low-range transfer case, and makes more use of aluminium and magnesium throughout. Despite its lower stance, the new vehicle's off-road capabilities were retained without compromising the street performance-oriented layout. A hybrid version was available in addition to the diesel. Model year 2013–2016 diesel Porsche Cayennes are included in the Volkswagen emissions scandal.
+Standard features of the 92A included automatic air conditioning with dual-zone climate controls, interior air filter, tilt/telescopic leather-wrapped steering wheel with radio controls, cruise control, leather upholstery, eight-way power front seats, outside-temperature indicator, and universal garage door opener. The Cayenne S adds a power sunroof and driver's seat memory. The Cayenne GTS added an optional rearview camera, keyless access and start, and a memory system. The Cayenne Turbo and Turbo S added navigation with voice recognition, optional four-zone climate controls, heated rear seats, a premium sound system with six-disc CD changer.
+The E2 Cayenne was powered by a 3.6-litre VR6 engine producing 300 PS (221 kW; 296 hp), the Cayenne S featured the same 4.8-litre V8 as the Panamera S producing 400 PS (294 kW; 395 hp), and the Cayenne Turbo used the Panamera Turbo's 4.8-litre twin-turbo V8 producing 500 PS (368 kW; 493 hp). The Cayenne S Hybrid uses an Audi-sourced 3.0-litre V6 producing 333 PS (245 kW; 328 hp), paired with a nickel-metal hydride battery providing 47 PS (35 kW; 46 hp), for a total of 380 PS (279 kW; 375 hp). A six-speed manual gearbox was the standard transmission in the base Cayenne to 2014, with all other models featuring an eight-speed automatic (Tiptronic S). The low-range transfer case from the previous generation was removed.
+Available Porsche Dynamic Chassis Control (PDCC) active anti-roll bars, Adaptive air suspension, and Porsche Active Suspension Management (PASM) were offered as options.
+In September 2012 Porsche announced the Cayenne S Diesel. This model is fitted with the Audi 4.2-litre V8 TDI engine. In October 2012, Porsche confirmed the addition of a new Cayenne Turbo S.
+In July 2014, Porsche launched a facelifted Cayenne range, with minor exterior alterations and new powertrain options, including a plug-in E-Hybrid and an upgrade of the S and GTS models' 4.8-litre V8 to a twin-turbocharged 3.6-litre V6.
+
+
+=== Hybrid ===
+
+At the IAA 2005, Porsche announced it would produce a hybrid version of the Cayenne before 2010. Two years later, at the IAA 2007, Porsche presented a functioning Cayenne Hybrid and a demonstration model of the drivetrain.
+Notable modifications include an electric vacuum pump and hydraulic steering pump, allowing the car to function even when the engine is deactivated. A 288-volt nickel metal hydride battery is placed under the boot floor, occupying the space normally used for a spare tyre.
+The production version, called the S Hybrid, was launched in 2010 with a 3.0-litre petrol V6 linked with an electric motor to achieve CO2 emissions of 193 g/km. The S Hybrid launched in the US market in November 2010.
+
+
+=== Plug-in hybrid ===
+
+In July 2014, Porsche announced the Porsche Cayenne S E-Hybrid, a plug-in hybrid with an all-electric range of between 18 and 36 km (11 and 22 mi) under the New European Driving Cycle (NEDC) standard. The plug-in model displaced the Cayenne S Hybrid from the line-up and formed part of the revised range. The Cayenne S E-Hybrid was the first plug-in hybrid in the premium SUV segment, allowing Porsche to become the first automaker with three production plug-in hybrid models. Deliveries in Germany were scheduled to begin in October 2014. Sales in the US began in November 2014.
+
+EPA fuel economy ratings
+The following are the official EPA ratings of the Cayenne S E-Hybrid compared with other models in the 2015 US line-up:
+
+
+=== Engines ===
+
+
+=== Guinness World Record ===
+On 1 May 2017, a 2017 Porsche Cayenne S Diesel set the Guinness World Record for the heaviest aircraft pulled by a production car. The Cayenne towed a 265-tonne Air France Airbus A380 a distance of 42 metres, breaking the previous 2013 record set by a Nissan Patrol towing a 170-tonne Ilyushin Il-76 a distance of 50 metres. Porsche repeated the test using a petrol-powered Cayenne Turbo S with 800 N⋅m (590 lb⋅ft) of torque, 50 Nm less than the S Diesel, to further demonstrate the Cayenne's towing capability.
+
+
+== Third generation (E3 9YA/9YB; 2017) ==
+
+The third-generation Porsche Cayenne was revealed on 29 August 2017, with sales beginning in 2019. It is built on the Volkswagen Group MLB platform shared with several other luxury crossover SUVs produced by Volkswagen Group, including the Volkswagen Touareg, Audi Q7, Audi Q8, Bentley Bentayga, and Lamborghini Urus.
+For this generation, the Cayenne no longer shares the door design with the Volkswagen Touareg. According to Stephan Lenschow, the Cayenne body product manager, this allows Porsche to give the Cayenne a more 'coke bottle' design. The Cayenne also received a redesigned front end with larger air intakes, more prominent creases along the bonnet, and a lower roofline to align its styling with the Porsche 911.
+The wheelbase remains unchanged from the previous generation, but Porsche increased the Cayenne's overall length by approximately 63 mm (2.5 in). The height is slightly reduced by 9 mm (0.4 in) and the coefficient of drag is rated at 0.35.
+Despite the slight increase in length, the third-generation Cayenne is lighter by around 65 kg (143 lb), depending on configuration, due to a lighter chassis structure. Aluminium is used extensively throughout, including in the doors, roof, bonnet, rear hatch, and body in white. The ratio of aluminium to high-strength steel is approximately 50–50. A lighter lithium-ion polymer starter battery saves a further 10 kg (22 lb), contributing to a nearly balanced weight distribution of approximately 55% front and 45% rear in base configuration.
+All engine options of the third-generation Cayenne are turbocharged, and diesel engines are no longer offered. All models are equipped with an updated eight-speed Tiptronic S transmission.
+Porsche offers optional Porsche Surface Coated Brakes (PSCB), consisting of a cast-iron disc with 70 micrometres of tungsten-carbide coating. According to Karl Heess, Porsche director for the SUV product line, PSCB reduce brake dust by as much as 50% over conventional iron discs and extend disc life by up to 35%. They are more expensive than iron discs but around 50% cheaper than the ceramic brake option. Other innovations include staggered front and rear tyres of different widths, and optional rear-axle steering to reduce the turning radius.
+In the first quarter of 2022, Porsche sales declined by 5%, but the Cayenne remained the manufacturer's best-selling model.
+
+
+=== Cayenne Coupé ===
+A model with a more rakish roofline dubbed the Cayenne Coupé became available in 2019. It was revealed during the Shanghai Auto Show in April 2019. At launch, two sub-models were offered: the Cayenne Coupé and Cayenne Turbo Coupé.
+The Cayenne Coupé is extensively reworked from the standard model, featuring a shallower front windshield and narrower A-pillar. The roof is lowered by 20 mm (0.8 in), while new rear door panels and updated fenders extend the vehicle width by 18 mm (0.7 in). The drag coefficient is rated at 0.34, which is 0.01 lower than the regular model. Every Cayenne Coupé is equipped with a standard 2.16 m2 (23.3 sq ft) fixed-glass panoramic roof, with an optional contoured carbon roof also available.
+
+
+=== Variants ===
+At its introduction in August 2017, Porsche released two versions of the third-generation Cayenne: the base model and the Cayenne S. The Cayenne Turbo was released a month later. The Cayenne S used the EA839 2.9-litre twin-turbo V6 engine, with larger brake rotors and calipers compared with the base model.
+
+
+==== Cayenne Turbo ====
+In September 2017, Porsche added the Cayenne Turbo to the line-up. Introduced at the Frankfurt Motor Show, the Cayenne Turbo is powered by a twin-turbocharged 4.0-litre V8 rated at 549 PS (404 kW; 541 hp) and 770 N⋅m (78.5 kg⋅m; 568 lb⋅ft) of torque. Porsche claimed a 0–100 km/h (0–62 mph) acceleration figure of 4.1 seconds (3.9 seconds with the Sport Chrono package) and a top speed of 285 km/h (177 mph). Porsche Surface Coated Brakes (PSCB) are standard equipment.
+
+
+==== Cayenne E-Hybrid ====
+In May 2018, Porsche introduced the Cayenne E-Hybrid. Sharing the same plug-in hybrid system with the Panamera 4 E-Hybrid, the variant uses a 3.0-litre V6 petrol engine with an eight-speed Tiptronic S automatic gearbox rated at 462 PS (340 kW; 456 hp) and 700 N⋅m (71.4 kg⋅m; 516 lb⋅ft) of torque. Porsche claims a 0–100 km/h (0–62 mph) time of 5.0 seconds and a top speed of 252 km/h (157 mph). The all-electric range is rated at 43 km (27 mi). It takes 7.8 hours to fully charge the 14.1 kWh battery with a 230-volt connection, or 2.3 hours with an optional 7.2 kW on-board charger.
+
+
+==== Cayenne Turbo S E-Hybrid ====
+In August 2019, the Cayenne Turbo S E-Hybrid was released for both regular and Coupé body styles. A plug-in hybrid model, it uses a twin-turbocharged 4.0-litre V8 petrol engine rated at 550 PS (405 kW; 542 hp) and a 136 PS (100 kW; 134 hp) electric motor for a combined total of 680 PS (500 kW; 671 hp) and 900 N⋅m (664 lb⋅ft) of torque. A 14.1-kWh lithium-ion battery is used, said to offer 30% more capacity than the battery in the previous-generation plug-in hybrid Cayenne. Charging time is quoted at 2.4 hours when connected to a 240-volt, 50-amp source. Porsche claimed a 0–100 km/h (0–62 mph) acceleration figure of 3.6 seconds and a top speed of 295 km/h (183 mph). Porsche Ceramic Composite Brakes (PCCB), Porsche Dynamic Chassis Control (PDCC), Porsche Torque Vectoring Plus (PTV+), and the Sport Chrono Package are standard equipment.
+
+
+==== Cayenne GTS ====
+In June 2020, Porsche introduced the Cayenne GTS and Cayenne GTS Coupé for the 2021 model year, after a two-year hiatus. It is powered by a twin-turbocharged 4.0-litre V8 shared with the Panamera GTS, rated at 460 PS (338 kW; 454 hp) and 620 N⋅m (63.2 kg⋅m; 457 lb⋅ft) of torque. The new models reach 100 km/h (62 mph) in 4.8 seconds, or 4.5 seconds using Performance Start (included in the optional Sport Chrono Package, standard on the Coupé). The Sport Design package, 21-inch RS Spyder Design wheels, and Sports Exhaust are standard equipment.
+Porsche reintroduced the GTS trim for the 2025 model year. Both Coupé and SUV body styles are available, powered by a 4.0-litre twin-turbo V8 producing 493 hp (368 kW; 500 PS), enabling a 0–60 mph (97 km/h) acceleration time of 4.2 seconds. Both models come standard with Porsche Torque Vectoring Plus and the Sport Design exterior package.
+
+
+==== Cayenne Turbo GT ====
+
+In June 2021, Porsche introduced the Cayenne Turbo GT. Based on the Cayenne Coupé, it uses a 4.0-litre twin-turbo V8 engine producing 640 PS (471 kW; 631 hp) and claimed 0–100 km/h (0–62 mph) acceleration of 3.3 seconds. It is equipped with 22-inch wheels with Pirelli P Zero Corsa tyres. Ride height is lowered by 18 mm (0.7 in), while overall vehicle height is 30 mm (1.2 in) lower.
+
+
+=== 2023 facelift ===
+In April 2023, the Cayenne received a mid-cycle refresh for the 2024 model year. Notable changes include a new dashboard layout similar to that of the Taycan, a fully digital 12.6-inch gauge cluster, and minor exterior restyling of the bonnet, headlights, bumpers, fenders, and boot.
+Matrix LED headlamps became standard across the range, with HD Matrix LED units available as an option. The HD Matrix LED features two high-definition modules and more than 32,000 pixels per headlamp, enabling selective masking of parts of the high beam.
+The powertrains were also upgraded, with the base 3.0-litre V6 gaining 10 kW (13 hp) and 50 N⋅m (37 lbf⋅ft) of torque to produce 260 kW (349 hp) and 500 N⋅m (369 lbf⋅ft). The Cayenne S regained a V8 engine, which it had lost since the introduction of the third-generation model. The 4.0-litre turbocharged petrol engine produces 350 kW (469 hp) and 600 N⋅m (443 lbf⋅ft) of torque, an increase of 25 kW (34 hp) and 50 N⋅m (37 lbf⋅ft) over the preceding Cayenne S powered by a 2.9-litre twin-turbocharged V6.
+The electric motor in the E-Hybrid plug-in hybrid variant was increased from 100 to 130 kW (134 to 174 hp), and the battery was enlarged to 93 MJ (26 kWh), up from 64.5 MJ (17.9 kWh) previously, offering a pure electric driving range of up to 90 km on the WLTP cycle.
+Chassis revisions for the refreshed model included updated dampers with two-valve technology for separate compression and rebound sections, offering a wider range of performance between ride comfort and handling.
+Porsche also announced a new Cayenne S E-Hybrid for the 2024 model year, slotting between the Cayenne E-Hybrid and the Turbo E-Hybrid. The S E-Hybrid uses a turbocharged 3.0-litre V6 producing 348 hp (260 kW; 353 PS) alone, and a combined output of 512 hp (382 kW; 519 PS) with its electric motor, along with 553 lb⋅ft (750 N⋅m) of torque.
+
+
+=== Powertrain ===
+SC = With Sport Chrono Package
+
+
+=== Safety ===
+
+
+=== Records ===
+In June 2021, a Porsche Cayenne Turbo GT lapped the Nürburgring Nordschleife in 7:38.925, driven by test driver Lars Kern.
+
+
+== Fourth generation (E4 X1A/X1B; 2026) ==
+
+The fourth-generation Cayenne was officially unveiled on 19 November 2025 and entered series production in February 2026, exclusively with a battery-electric powertrain as the Cayenne Electric. Orders started immediately. A fourth-generation internal combustion engine Cayenne has not been confirmed, though Porsche has announced a further update to the third-generation model as a separate programme. It comes with a 14.25-inch OLED instrument display and a curved central 12.25-inch OLED infotainment screen known as the "flow display", with support for Android Auto and Apple CarPlay. An optional 14.9-inch passenger display and an optional augmented 3D head-up display are also available.
+It has a functionally integrated 113 kWh battery pack (108 kWh net) composed of six modules bolted to the chassis. Energy density is approximately 7% higher than the Taycan sedan. Each module hosts four packs, with eight pouch cells connected in series. The pack can charge at up to 400 kW, reaching 10 to 80% in as few as 16 minutes. It supports both NACS and J1772 chargers and offers 11 kW inductive home charging.
+The cooling system uses 15% less energy, and a predictive thermal management system conditions the battery during driving and charging.
+The dual-motor Turbo model produces more torque and power than any other regular-series production Porsche, with over 804 hp (600 kW) in standard operation, rising to over 938 hp (699 kW) with 10-second surge power, and 1,072 hp (799 kW) during launch control. The motor directly cools the stator with non-conductive oil and uses silicon carbide inverters achieving motor efficiency of up to 98%. Regenerative braking can reach 600 kW, supporting over 0.5 g of deceleration.
+
+
+=== Cayenne Coupé Electric ===
+The coupé variant of the Cayenne Electric was unveiled on 24 April 2026.
+
+
+=== Safety ===
+
+
+== Mechanical issues ==
+The Porsche Cayenne is known for certain mechanical issues. These include failure of the centre driveshaft carrier bearing on the first generation. Cayenne engines using Lokasil-coated engine blocks (4.5 V8s) can suffer from cylinder bore scoring. Early V8 Cayenne models were equipped with plastic coolant pipes that could crack and fail, potentially causing the engine to overheat. Subsequent Cayenne S and Turbo engines were fitted with aluminium coolant pipes to address this issue. 92A Cayenne models, with the exception of the Hybrid and V6 Diesel, can suffer from transfer case problems, and Porsche issued a 10-year warranty on pre-facelift 92A models (2011–2014) and a 7-year warranty on post-facelift 92A models (2015–2018), both with unlimited mileage.
+
+
+== References ==
+
+
+=== Bibliography ===
+
+
+== External links ==
+
+Official website

@@ -1,0 +1,7 @@
+streamlit
+google-cloud-aiplatform
+chromadb
+sentence-transformers
+numpy
+pandas
+pypdf

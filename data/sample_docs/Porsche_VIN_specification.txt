@@ -1,0 +1,57 @@
+The ISO standard vehicle identification number (VIN) was introduced for the Porsche model year 1981.
+
+
+== Decoding ==
+VINs consist of 17 characters and for Porsche can be decoded as follows:-
+
+
+== Vehicle Specification for USA etc (positions 4, 5 and 6) ==
+VIN has been implemented differently in two regions, they consist of the following countries:-
+USA etc. = Countries that follow USA style VIN encoding include USA, Canada, Mexico, India, Kenya, Pakistan, China, Hong Kong, Macao, Brazil, Mexico, Middle East (Qatar, UAE, KSA, etc) and South Korea. Note: Not all of these countries use the Check Digit value. Some of these countries transitioned from a ROW ZZZ encoding to USA style encoding during certain model years and/or models. 
+RoW = Rest of world. (i.e. everywhere except the above countries). These VINs include the "ZZZ" filler characters. 
+Vehicle Specification for "USA etc" is a 3 character code giving details of the body type, engine, seatbelts and airbags fitted.
+
+
+== Examples of model type codes (positions 7, 8 and 12) ==
+On 2010+ North America market vehicles, the first digit will be 'A' instead of '9'
+
+
+== Year codes (position 10) ==
+More properly described as 'Model year'. While the code may indicate a particular year it may well be the 'model year' which could be the subsequent year, for instance a 1994 registered vehicle may well be a model year 1995 on the VIN/chassis number.
+
+
+== Factory codes (position 11) ==
+
+
+== Model Configuration Code (position 13) ==
+A leading "0" usually means standard coupé, for the RoW markets. For the 944 and 968, US cars are usually identified by a leading "5". 944 convertibles have a leading "3" (RoW) or "8" (US). Sometimes this model code extends into the 14th digit, such as for the 968 CS which had chassis numbers beginning with "15".
+
+
+== Examples ==
+WP0ZZZ94ZFN40**** a 944.
+WP0ZZZ98Z7U770439**** a Cayman
+WP0ZZZ92ZGN40**** a 924S.
+WP1ZZZ9PZ8LA7**** a Cayenne.
+WP0ZZZ96ZRS81**** a 968.
+WP0ZZZ99Z5S73**** a 911.
+WP0ZZZ97ZAL08**** a Panamera.
+WP0ZZZ98Z4L00**** a Carrera GT.
+WP0ZZZ98Z8U72**** a Boxster S.
+WP0ZZZ99Z5S76**** a 911 C2S Convertible.
+WP0ZZZ99Z2S64**** a 911 C4 convertible.
+WP1AF2A51FLB9**** a Macan Turbo
+WP0ZZZ95ZJS90**** a 959
+WP1ZZZ9YZLDA3**** a Cayenne E-hybrid
+WP0ZZZ99ZKS12**** a Targa 4 GTS
+WP0AA2Y18NSA1**** a 2022 Taycan sedan, RWD, for North America
+
+
+== References ==
+
+Most of the information summarised here was first published in articles by Chris Horton in the December 2010 and January 2011 editions of Porsche Post (Magazine of the Porsche Club Great Britain), additional information was first posted on 968uk.com in November 2004.
+
+
+== External ==
+Porsche Build Sheets & VIN Decoder - VIN Analytics
+Porsche VIN decoder.
+Decode Classic Porsche VIN

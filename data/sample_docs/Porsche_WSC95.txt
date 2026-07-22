@@ -1,0 +1,45 @@
+The Porsche WSC-95 (sometimes referred to as the TWR WSC-95) was a Le Mans Prototype originally built by Tom Walkinshaw Racing. It was modified by Porsche from the original Group C Jaguar XJR-14 from which it derived, and run by Joest Racing. Originally intended to race in the IMSA World Sportscar Championship, the WSC-95 saw very little race action even though it won the 24 Hours of Le Mans in both 1996 and 1997 without being acknowledged as a factory supported project. It was later upgraded to the Porsche LMP1-98 before being retired. Only two cars were ever built.
+
+
+== Development ==
+The project was born in 1994 after TWR USA boss Tony Dowe was told by Tom Walkinshaw to find a race program within six weeks or wind up the business. With just an XJR-14 chassis at his disposal, Dowe approached Alwin Springer of Porsche Racing USA with a technical partnership arrangement, which was agreed to.
+The car was not a factory-backed effort, yet was approved by Porsche and used some of their expertise and most importantly, their powerplant. Designed as a prototype to comply with the International Motor Sports Association (IMSA) series, running under the World Sports Car (WSC) regulations, Tom Walkinshaw Racing (TWR) used the XJR-14 chassis number 691, re-engineered by David Fullerton and further modified by Porsche.
+For an engine, Porsche used one of their longest running motors, the Type-935 turbocharged Flat-6. Originally used in the Porsche 956 in the 1980s, the engine was still powerful enough to power modern prototypes. While Porsche's new 911 GT1s used a 3.2 Litre engine, the WSC-95 used a smaller 3.0 Litre engine. Although smaller, this gave the WSC-95 a better fuel economy than the 911 GT1, which was useful over long race distances.
+Mario Andretti and Hans-Joachim Stuck were signed to drive and the car had a shakedown prior to the 1995 24 Hours of Daytona. Unfortunately, the IMSA WSC regulations were changed prior to the 1995 season, leading to Porsche canceling the project and the car was mothballed. However, in February 1996 Reinhold Joest of the Joest Racing team convinced Porsche to give the unused prototype to his team, and for them to compete in the 24 Hours of Le Mans. With approval from Porsche, Joest put forth the money to allow for the construction of a second car from scratch, as well as the slight modifications to the existing car in order to meet the Le Mans Prototype (LMP1) regulations. Porsche agreed to help in the development of the car only if Joest agreed to pay for the services.
+Following the success of the WSC-95s in winning both the 1996 and 1997 24 Hours of Le Mans, Porsche decided to take over the project themselves. Both WSC-95 chassis underwent major revisions to their bodywork. The nose was raised in the middle, while to the sides sculpting allowed for the moving of the air intakes for the engine, necessitating the removal of the large scoop underneath the rollbar. The sides of the car were also redesigned, with the large opening for the radiator vents covered up while exhaust vents were also rearranged. The Type-935 Flat-6 was also upgraded, expanded out to 3.2 Litres. Having become a proper factory undertaking, the cars became officially known as the Porsche LMP1-98s.
+
+
+== Racing history ==
+The two WSC-95s were completed just in time for Joest Racing to go to the Le Mans test session in May. There, the two cars showed their pace early by setting the fifth and tenth fastest times, easily beating the factory Porsche 911 GT1s. A few weeks later at Le Mans, the WSC-95s showed their improvements and the #8 entry was at the pole position, while #7 was seventh. However the 911 GT1s had also improved, taking the fourth and fifth fastest qualifying positions. During the race, the #7 WSC-95 led for nearly the entire race, although closely followed by the factory 911 GT1s. The #8 entry, driven by Didier Theys, Michele Alboreto and Pierluigi Martini ran well, although it succumbed to mechanical failures caused by a collision on the track during the closing hours. In the end, the #7 entry of Davy Jones, Alexander Wurz, and Manuel Reuter took the overall victory, a mere lap ahead of the following Porsche 911 GT1. The car experienced lighter tyre wear than competitors in the GT1 class and was able to make up time by only changing tyres at every third pit stop made for petrol.
+
+Although Joest had originally intended to run the car just at Le Mans in 1996, the team decided to attempt once again in 1997 with a single car. A few weeks prior to Le Mans, Joest decided to showcase their car at the inaugural International Sports Racing Series event at Donington Park, where the car took a dominant victory. Upon returning to Le Mans they still showed their pace by once again taking pole position. Although still facing competition from the factory Porsche 911 GT1s as well as the new McLaren F1 GTRs, Nissan had now entered and were keen to take an overall victory. However, unlike the previous year, the 911 GT1s suffered various difficulties, both in the hands of the factory team but also for the privateers. The finish therefore came down to a close race between a McLaren F1 GTR and the WSC-95, with Joest Racing once again coming out the victor by a single lap. Ferrari Formula One teammates of 1985 and 1986, Michele Alboreto and Stefan Johansson, drove with Le Mans rookie Tom Kristensen to take the win. It was the first of a record nine wins at Le Mans for Kristensen.
+Now realizing the potential of the abandoned WSC-95 against their 911 GT1, Porsche developed both chassis into the newer and even more capable LMP1-98. Unfortunately at the same time, not only were Porsche attempting to improve both the 911 GT1 and LMP1-98, but as were Nissan and the newcomers Toyota, Mercedes-Benz, and BMW. Still run by the Joest Racing squad, the LMP1-98s showed that their quick pace was now lacking against new competitors, managing to take a best of only ninth in qualifying. During the race itself, although the LMP1-98s showed pace, they were not able to survive the entire race. One car suffered electronics difficulties after only 107 laps, while the second car broke some bodywork mountings in a spin and was not able to continue after it had completed 218 laps.
+For a final appearance, an LMP1-98 appeared at the debut Petit Le Mans in the United States. Alongside a lone 911 GT1, both cars showed great pace, but the LMP1-98 had to settle for second place, defeated by a customer Ferrari 333 SP by only a few seconds following ten hours of racing.
+The LMP1-98s were retired after 1998, with Porsche planning to develop their own Le Mans Prototype for 2000. That project was later cancelled, and Porsche did not return to factory prototype racing until the 2005 debut of the Porsche RS Spyder.
+
+
+== Racing Record ==
+
+
+=== 24 Hours of Le Mans results ===
+
+
+== Chassis history ==
+WSC-95 #001
+
+1996 24 Hours of Le Mans #7 - Winner
+1997 ISRS Donington Park #7 - Winner
+1997 24 Hours of Le Mans #7 - Winner
+1998 24 Hours of Le Mans #7 - DNF
+1998 Petit Le Mans #77 - 2nd
+WSC-95 #002
+
+1996 24 Hours of Le Mans #8 - DNF
+1998 24 Hours of Le Mans #8 - DNF
+
+
+== References ==
+
+
+== External links ==
+Porsche USA - 1996 WSC Joest Spyder history

@@ -1,0 +1,46 @@
+The Porsche Type 753 engine is a naturally-aspirated, air cooled flat-eight racing engine, designed by Porsche for Formula One racing of the 1½ litre formula that started in 1961. It was used only in the 1962 Formula One season. Porsche won one Grand Prix, plus the Solitude race, and retired from Formula One after 1962. 
+A larger version of the flat-8 was developed in parallel as Type 771 for use in sportscar racing for several season, mostly in a 2-litre version, starting in the Porsche 718 W-RS/8, and getting used also in factory-entered prototypes of the 904, 906, 910 and the 909 hill climbing car. It peaked as 2.2 liter 771/1 in the Porsche 907 that was retired after the 1968 World Sportscar Championship in which the proper 3 litre flat-8 Porsche 908 had its debut.
+
+
+== Background ==
+In October 1958 the Fédération Internationale de l'Automobile (FIA) announced that for the 1961 Formula One season, engine capacity would be limited to the same 1.5 litres as in Formula Two (F2). This meant that Porsche could use their F2 cars almost unchanged in F1.
+For 1961 Porsche launched the Type 787. The car had a new chassis that was longer than that of the 718/2 by an additional 100 mm (3.9 in) to accommodate the Type 753 then in development. While the rear suspension was carried over from the earlier car, in the front was a new upper and lower A-arm suspension with coil springs. The first chassis completed was powered by a 547/3 four-cylinder engine with Kugelfischer fuel injection. At the Monaco Grand Prix the car retired when the fuel injection cut out. A second car, also fitted with the 547/3 engine, was completed in time to appear in the Dutch Grand Prix alongside the other 787. The cars placed 10th and 11th, but their lack of power and poor handling caused Ferry Porsche to retire the model.
+Porsche would focus on building a brand new competitive formula race car with an eight-cylinder engine.
+The Porsche Type 804 was lower, narrower, and had a sleeker profile than its 787 predecessor, which was achieved in part by using a horizontal cooling fan (vertical axis) on top of the new engine, in contrast to the vertically mounted (horizontal axis) cooling fan used on the four-cylinder Fuhrmann engine.
+
+
+== Engine history ==
+Work began on Type 753 in 1960, following the announcement of the 1.5-litre displacement limit for the 1961 F1 season. The design of the new engine, Porsche's first flat-eight, was done by Hans Hönick and Hans Mezger.
+Assembly of the engine was a time consuming job, often requiring repeated assembly and disassembly with extensive hand-fitting of components. Building and setting up a 753 never took less than 100 hours and could take up to 220 hours. 
+A prototype engine was first started on a test-bench on 12 December 1960. Initial power output was disappointing; 105 hp (78.3 kW) (some sources say 120 hp (89.5 kW)), when the target had been 200 hp (149.1 kW).
+During the development of the 804, there were concerns about the readiness of the eight-cylinder engine, so a second chassis, 804-02, was modified to accept the four-cylinder Type 547/3 from the 787. That chassis was later converted back to the eight-cylinder configuration before ever racing with the four-cylinder engine.
+Swiss racing driver, engineer, and fuel injection specialist Michael May transferred from Mercedes-Benz to Porsche to work on the 753 engine, but wound up developing improvements for the 547/3 engine instead, before leaving Porsche for Ferrari.
+With a compression ratio of 10.0:1, the 753 flat-eight produced 132 kW (177 hp) at 9200 rpm on its first outing. This was still less power than the new Coventry-Climax and BRM V8 engines.
+Although the chassis of the Type 787 F1 car was lengthened to accommodate the 753, the flat-eight was never installed and the car used the 547 throughout its short life. The 753 engine debuted in Porsche's Formula One Type 804 on 20 May 1962 at the Dutch Grand Prix at Zandvoort. With a compression ratio of 10.0:1, the engine produced 132 kW (177 hp) at 9200 rpm on its first outing. This was still less power than the new Coventry-Climax and BRM V8 engines. With the improved six-speed transmission from the Type 718 and a ZF limited-slip differential, the car reached a top speed of 270 km/h (167.8 mph).
+The 753 delivered Porsche's only F1 win as a constructor at the 1962 French Grand Prix at Rouen-Les-Essarts, in an 804 driven by Dan Gurney.
+
+
+== Features ==
+The 753 inherited Porsche's traditional boxer layout and air-cooling, but with the number of cylinders increased to eight.
+The bore and stroke are 66.0 mm × 54.6 mm (2.6 in × 2.1 in) respectively, giving a displacement of 1,494.38 cc (91.2 cu in). The oversquare dimensions keep piston speeds low, and keep the engine narrow to minimise disruption of the airflow down the sides of the car's tub, although it was still wider than the 120° V6 and 90° V8s of the competition.
+The centre of the engine is a magnesium crankcase cast in two halves split vertically along the centre-line of the crankshaft. The crankcase carries a one-piece crankshaft in nine main bearings. The eight aluminum cylinder barrels have their bores treated with a spray-on molybdenum/steel coating called Ferral. Each finned cylinder has its own separate aluminum cylinder head, with four studs per cylinder holding the heads and barrels to the crankcase. An aluminum valve-gear cover cast as a single piece stabilizes the four cylinders on each side of the engine.
+The valvetrain is similar in some respects to that designed by Ernst Fuhrmann for the Type 547 four-cylinder engine. There are two overhead camshafts per cylinder bank, operating two valves per cylinder. As with the 547, the cams are driven by shafts rather than gears or chains, and the cam lobes are separate pieces that are keyed onto the shaft. The 753 adds a second countershaft above the crankshaft to the single one underneath the crankshaft in the 547. Both countershafts rotate at half crankshaft speed. Two layshafts from the upper countershaft drive the left and right intake camshafts, while two other layshafts from the lower countershaft drive the exhaust camshafts, eliminating the vertical shafts in the 547's cylinder heads that gave that engine one of its nicknames. A short vertical shaft from the bevel gear on the right-hand inlet camshaft drives the axial cooling fan at 0.92x crankshaft speed. The valvetrain was designed to operate reliably at up to 10,000 rpm.
+The engine has a dry sump system with a separate oil tank. A Bosch dual ignition system with four ignition coils and two distributors fires two spark plugs per cylinder. The air-fuel mixture is delivered by four 38 mm (1.5 in) Weber double downdraft carburetors; two on each side.
+The engine, with exhaust and clutch, is 23.7 in (602 mm) long, 27.8 in (710 mm) wide, 20.6 in (523 mm) high and weighs 341 lb (154.7 kg).
+Mezger and his team worked to improve both the engine's reliability and power output. The earliest engines had a 90° angle between the valves. When this was reduced, first to 84° and subsequently to 72°, power output rose. Other changes included reshaping the combustion chamber, lightening crankpins, and switching to titanium connecting rods. Power was eventually raised to 185 hp (138.0 kW).
+The 753 influenced the design of the engine for Porsche's 901 project, which would become the 911.
+
+
+== Technical summary ==
+
+
+== Applications ==
+Porsche 804
+
+
+== References ==
+
+
+== External links ==
+Dellis, Nicolaos (22 February 2010). "Porsche 804 F1 (1962)". stuttcars.com. Stuttcars Porsche Heritage Club.
+Melissen, Wouter (4 June 2009). "Porsche 804 F1". Ultimatecarpage.com.

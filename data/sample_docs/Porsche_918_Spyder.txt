@@ -1,0 +1,59 @@
+The Porsche 918 Spyder is a limited-production mid-engine plug-in-hybrid sports car manufactured by German marque Porsche. The 918 Spyder is a plug-in hybrid powered by a mid-mounted naturally aspirated 4.6 L (4,593 cc) V8 engine, developing 447 kW (608 PS; 599 hp) at 8,700 RPM, with two electric motors delivering an additional 210 kW (286 PS; 282 hp) for a combined output of 652 kW (875 hp) and 1,280 N⋅m (944 lbf⋅ft) of torque. The 918 Spyder's 6.8 kWh lithium-ion battery pack delivers an all-electric range of 19 km (12 mi) under the US Environmental Protection Agency's five-cycle tests.
+Production began on 18 September 2013, with deliveries initially scheduled to begin in December 2013, and a starting price of ≈€781,000 (US$845,000 or £711,000). The 918 Spyder was sold out in December 2014 and production ended in June 2015.
+The 918 Spyder was first shown as a concept at the 80th Geneva Motor Show in March 2010. On 28 July 2010, after 2,000 declarations of interest, the supervisory board of Porsche AG approved series development of the 918 Spyder. The production version was unveiled at the September 2013 Frankfurt Motor Show. Porsche also unveiled the RSR racing variant of the 918 at the 2011 North American International Auto Show, which combined hybrid technology first used in the 997 GT3 R Hybrid, with styling from the 918 Spyder. However, the 918 RSR did not make it to production. The 918 Spyder was the second plug-in hybrid car manufactured by Porsche, after the 2014 Panamera S E-Hybrid.
+Set to be the replacement for the 918, the Porsche Mission X was presented first, at the preamble to the centenary of the 91st 24 Hours of Le Mans, in June of 2023 and to be produced in 2025.
+Since its release, the Porsche 918 Spyder has been the subject of half a dozen different recalls, for issues ranging from both front and rear control arms breaking to seat belts.
+
+
+== Specifications ==
+
+The 918 Spyder is powered by a 4,593 cc (4.6 L; 280.3 cu in) naturally aspirated V8 engine built on the same architecture as the one used in the RS Spyder Le Mans Prototype racing car without any engine belts.
+In developing the V8 for the 918 Spyder the bore remained 95 mm with the stroke increased from 59.9 mm (for 3397 cc) to 81 mm (for 4593 cc). The engine ran to 9,200 rpm. In 2011 an RSR version was introduced, which offered 563 bhp at 10,300 rpm.
+The engine weighs 135 kg (298 lb), according to Porsche, and delivers 447 kW (608 PS; 599 hp) at 8,700 RPM and 540 N⋅m (398 lbf⋅ft) of maximum torque at 6,700 RPM. This is supplemented by two electric motors delivering an additional 210 kW (286 PS; 282 hp). One 115 kW (156 PS; 154 hp) electric motor drives the rear wheels in parallel with the engine and also serves as the main generator. This motor and engine deliver power to the rear axle via a 7-speed gearbox coupled to Porsche's own PDK double-clutch system. The front 95 kW (129 PS; 127 hp) electric motor directly drives the front axle; an electric clutch decouples the motor when not in use. The total system delivers 652 kW (887 PS; 875 hp) and 1,280 N⋅m (944 lbf⋅ft) of torque. Porsche provided official performance figures of 0–100 km/h (0–62 mph) in 2.6 seconds, 0–200 km/h (0–124 mph) in 7.2 seconds, 0–300 km/h (0–186 mph) in 19.9 seconds and a top speed of 345 km/h (214 mph).
+Those numbers were surpassed in independent tests which yielded 2.5 seconds for 0–100 km/h, 7.0 seconds for 0–200 km/h, 19.1 seconds for 0–300 km/h, a top speed of 352 km/h (218.7 mph) and 17.75 seconds for the standing kilometre reaching a speed of 295.9 km/h (183.9 mph).
+In Car and Driver's independent test of the Porsche 918 they achieved 0–60 mph (0–97 km/h) in 2.2 seconds, 0–100 mph (0–161 km/h) in 4.9 seconds, 0–180 mph (0–290 km/h) in 17.5 seconds, and the quarter mile in 9.8 seconds. In Motor Trend's independent test the Porsche 918 set a production-car track record at Willow Springs Raceway. With a time of 2.4 seconds, it was the fastest car to 60 mph that they had ever tested. It stopped from 60 mph (97 km/h) in 94 ft (29 m), and broke Motor Trend's figure 8 record at 22.2 seconds.
+The energy storage system is a 312-cell, liquid-cooled 6.8 kWh lithium-ion battery positioned behind the passenger cell. In addition to a plug-in charge port at the passenger-side B pillar, the batteries are also charged by regenerative braking and by excess output from the engine when the car is coasting. CO2 emissions are 79 g/km and fuel consumption is 3 L/100 km (94 mpg‑imp; 78 mpg‑US) under the New European Driving Cycle (NEDC). The U.S. Environmental Protection Agency (EPA) under its five-cycle tests rated the 2015 model year Porsche 918 Spyder energy consumption in all-electric mode at 50 kWh per 100 miles, which translates into a combined city/highway fuel economy of 3.5 L/100 km (81 mpg‑imp; 67 mpg‑US). When powered only by the gasoline engine, EPA's official combined city/highway fuel economy is 22 mpg‑US (11 L/100 km; 26 mpg‑imp).
+The 4.6 litre V8 petrol engine can recharge an empty battery using about one litre of fuel. The supplied Porsche Universal Charger requires seven hours to charge the battery on a typical 120 V household AC socket or two hours on a 240 V charger. A DC charging station can restore the battery to full capacity in 25 minutes.
+The 918 Spyder offers five different running modes: E-Drive allows the car to run under battery power alone, using the rear electric motor and front motor, giving a range of 29 kilometres (18 mi) for the concept model. The official U.S. EPA all-electric range is 12 mi (19 km). The total range with a full tank of gasoline and a fully charged battery is 420 miles (680 km) according to EPA tests. Under the E-Drive mode the car can attain a maximum speed of 150 km/h (93 mph). Two hybrid modes (Hybrid, and Race) use both the engine and electric motors to provide the desired levels of economy and performance. In Race mode a push-to-pass button initiates the Hot Lap setting, which delivers additional electrical power. The chassis is a carbon-fibre-reinforced plastic monocoque and the brake system is boosted electrically (rather than the traditional vacuum boost).
+
+
+== Sales and production ==
+The production version was unveiled at the 2013 Frankfurt Motor Show. The 918 Spyder was produced in a limited series of 918 units and it was developed in Weissach and assembled in Zuffenhausen for the 2014 model year. Production for the 2014 model year started on 18 September 2013, with deliveries scheduled to begin in December 2013. Sales in the United States began in June 2014. Pricing for the 918 Spyder started at €781,000 in Europe and US$845,000 in the U.S. According to its battery size, the 918 Spyder was eligible to a federal tax credit of up to US$3,667.
+Production ended in June 2015 as scheduled.
+The country with the most orders is the United States with 297 units, followed by China and Germany with approximately 100 orders each, and Canada ordering 35 units.
+According to JATO Dynamics, a total of 105 units have been registered worldwide during the first nine months of 2014. The United States is the leading market with 202 units delivered up to May 2015. As of October 2014, a total of 9 units were registered in Switzerland, 6 in the Netherlands, 5 units in Canada, 4 in Sweden, 3 in Brazil and 1 in South Africa.
+
+
+== Weissach Package ==
+The Weissach Package is a weight saving and aerodynamics package offered by Porsche for the 918 Spyder. It was an $84,000 factory option in the US. The package included magnesium wheels specially manufactured by BBS, an extended rear diffuser, and interior parts covered in Alcantara instead of leather. The windscreen frame, roof, rear wings, and rear-view mirrors were also made out of carbon fiber.
+
+
+== Porsche 918 RSR ==
+
+At the 2011 North American International Auto Show in Detroit, Porsche unveiled the RSR racing variant of the 918 Spyder. Instead of using plug-in hybrid technology, power for the two electric motors is provided by a flywheel accumulator KERS system that sits beside the driver in the passenger compartment. The V8 is a further development of the direct injection engine from the RS Spyder race car developing 414 kW (563 PS; 555 hp) at 10,300 RPM. The electric motors each provide an additional 150 kW (200 PS; 200 hp), giving a peak power output of 564 kW (767 PS; 756 hp). The six-speed gearbox is a development of the unit from the RS Spyder.
+
+
+== Nürburgring lap time record ==
+In September 2013 a 918 fitted with the optional 'Weissach Package' set a Nürburgring lap time of 6:57 on the 20.6 km (12.8 mi) road course, reducing the previous record by 14 seconds, and making it the first street-legal production car to break the 7-minute barrier.
+
+
+== Gallery ==
+
+
+== See also ==
+List of production cars by power output
+Government incentives for plug-in electric vehicles
+List of modern production plug-in electric vehicles
+
+
+== Notes ==
+
+
+== References ==
+
+
+== External links ==
+
+Official Porsche website
+Official Porsche 918 Spyder website
+Porsche 918 Photos and Information

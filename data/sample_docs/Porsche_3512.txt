@@ -1,0 +1,27 @@
+The Porsche 3512 was a motor racing engine designed by Porsche for use in Formula One in the early 1990s.
+Porsche had left Formula One at the end of 1987, after four years supplying TAG-badged Porsche PO1 1.5-litre turbo V6 engines to the McLaren team, but decided to return two years later with a view to create a V12 engine for the newly introduced 3.5-litre normally-aspirated regulations (hence this engine's designation of 3512). After a partnership with the small Onyx team was suggested, in early 1990 the company signed a four-year, 80-million Deutsche Mark (€72 million in 2021) deal with Footwork Arrows, to commence in 1991.
+
+
+== History ==
+The 3512 was designed by Porsche veteran Hans Mezger, and had an 80-degree V-angle and a power take-off from the centre of the engine, basically two V6 combined. The latter had been a feature of the flat-12 Type 912 engine (also designed by Mezger) in the Porsche 917 sports car of 1969, but was unusual for modern Formula One, with many wins in the Mercedes-Benz W196 of 1954 and 1955.
+Problems beset the 3512 almost immediately, as it was completed later than scheduled, and its layout meant that it was large and heavy. When ancillaries like the clutch and flywheel were installed, the engine weighed 418 lb (189.6 kg) – compared to the V12s of Honda and Ferrari at 352 lb (159.6 kg) and 308 lb (139.7 kg) respectively. All this meant that it could not be properly installed in Footwork's car for the 1991 season, the FA12, and so the team had to redesign this car while starting the season with a modified version of their 1989/1990 car, designated the A11C.
+Further difficulties were encountered when the engine started to be used: power output was said to be only around 670 hp (500 kW) at around 13,000 rpm, while the novel method of drawing power from the centre of the engine led to oil pressure problems.
+When the season got underway at the Phoenix street circuit in the United States, Alex Caffi failed to qualify his A11C, while teammate Michele Alboreto qualified 25th but retired from the race at half-distance with a gearbox failure. At the faster Interlagos circuit for the next round in Brazil, both drivers failed to make the grid. The redesigned FA12 was introduced at the San Marino Grand Prix at Imola, another fast circuit, but Alboreto destroyed his car during practice and was forced to use the A11C, and again both drivers failed to qualify. Then at Monaco, Caffi suffered a crash of his own and once again failed to make the grid, while Alboreto again qualified 25th before his 3512 failed at half-distance.
+By this stage, Footwork had already given up hope in the Porsche engine, and had decided to go back to the Ford Cosworth DFR V8 that had been used in 1989 and 1990. However, the team had to make do with the 3512 for the North American rounds in Canada and Mexico, for which Stefan Johansson took the place of Caffi, who had sustained injuries in a road accident. Both drivers managed to qualify at Montreal, Alboreto 21st and Johansson 25th, but retired with throttle and engine problems. Then in Mexico, after four of the team's seven engines for the weekend had failed on the Friday, Johansson failed to qualify, while Alboreto qualified 26th and last, only for his 3512 to fail again before half-distance.
+Footwork finally reverted to the DFR in time for the French Grand Prix, installed in a modification of the FA12, designated the FA12C. Porsche formally terminated its deal with the team shortly before the Japanese Grand Prix in October, and has not appeared in Formula One since.
+A V10 replacement for the 3512 was in development at the time of Porsche's withdrawal from Formula One. This engine would not be completed until several years later, when it was modified for use in the stillborn Porsche LMP project in 2000. The engine eventually was re-used when a further variant was chosen as the powerplant of the Porsche Carrera GT supercar.
+
+
+== Applications ==
+Arrows A11
+Footwork FA12
+
+
+== Complete Formula One results ==
+(key) (results in bold indicate pole position)
+
+
+== References ==
+
+
+== External links ==

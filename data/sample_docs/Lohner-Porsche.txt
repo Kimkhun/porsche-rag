@@ -1,0 +1,33 @@
+Lohner–Porsche is a term encompassing several electric vehicles designed by Ferdinand Porsche and manufactured at Lohner-Werke in the early 1900s. They include the first hybrid electric vehicle and the first commercial hub motor car. The hybrid "Mixed" or "Mixte" racecars are powered by a gasoline engine which drives four electric motors, one in each wheel hub. The battery-powered "Touring" or "Chaise" commercial cars utilize only two front-wheel hub motors.
+
+
+== Ferdinand Porsche's education and prior work ==
+Ferdinand Porsche's father was a professional panel-beater. From a young age, Ferdinand showed a great interest in technology, and was especially intrigued by electricity. He was already attending classes at the Imperial Polytechnical College in Reichenberg (Czech: Liberec, some 5 km (3 mi) from his home) at night, while still helping his father in his workshop by day.
+In 1893, thanks to a referral, Porsche landed a job with the Béla Egger & Co. Electrical company in Vienna (later Brown Boveri, now ABB), and moved there, at the young age of 18. While working in Vienna, he enrolled as a part-time student at what is now the Vienna University of Technology, and went there whenever he could after work. Other than attending classes there, Porsche did not complete any formal engineering education. During his five years with Béla Egger, he built their first electric wheel-hub motor, the concept for which had been developed by American inventor Wellington Adams, and Porsche also raced it, in 1897.
+
+
+== Development ==
+
+At the age of 23, Porsche was employed at the Jacob Lohner factory. Despite Porsche having had mostly on-the-job learning, and very limited formal engineering education, Jacob Lohner employed him to develop an electric powertrain for his coaches. The first prototypes designed by Porsche were two-wheel drive, battery-powered electric vehicles with two front-wheel hub-mounted motors. Porsche's prototype car boasted a low-friction drivetrain, due to the hub-mounted electric motors directly driving the wheels. Each internal-pole electric motor was capable of outputting 2.5 to 3.5 hp (1.9 to 2.6 kW), peaking to 7 hp (5.2 kW) for short bursts.
+The 1898 "System Lohner–Porsche" created a press whirlwind across Europe. Lohner received his first order from E.W. Hart, himself a coachbuilder based in Luton in the UK. Hart asked for significant modifications; his vehicle was to be capable of running on petrol as well as electricity, of carrying four passengers, and of employing four-wheel drive. The custom coach was a monster dubbed La Toujours Contente ('always satisfied' in French), a jab at record-holder Camille Jenatzy's electric La Jamais Contente, and was exhibited at the December 1900 Paris Exhibition. The enormous Lohner required 1.8 tonnes of batteries consisting of a 44-cell 80-volt lead-acid battery, all housed in a spring-suspended battery container to protect the fragile cells. The four electric motors weighed a total of 1,280 pounds, contributing to a total vehicle weight of over four tonnes on its Continental pneumatic tires. With a battery capacity around 270 amp-hours and four forward speeds, the 56-horsepower coach ran in several expositions and competitions. It cost 15,000 Austrian crowns.
+Despite such ambitious engineering, the car was completed on time and was delivered personally by Porsche. Hart was so impressed, he purchased another, two-wheel drive example at a relative bargain of 7,950 Austrian crowns.
+On November 6–9, 1900, the Automobile Club of Great Britain and Ireland sponsored an electric vehicle endurance  trial, in which the four-wheel drive Lohner–Porsche was one of 11 entrants—one of three entrants Hart brought to the Chislehurst starting line. The first-place winner of the trial was a Louis-Krieger car dubbed the 'Powerful'. Thanks largely to its lighter weight and larger-diameter wheels, it achieved a first run of 59 miles at an average of about 10 miles per hour. Le Toujours Contente suffered tire failures on its 34 miles with Porsche at the wheel. One competitor stated, "there were inches of mud on the floors; rain came through the roof; the sheds were doorless and the cars and attendants were nightly exposed to the full force of wind and rain." Other electric vehicle entrants managed only seven miles distance through the muddy, rutted course. Ferdinand Porsche caught a severe cold, contributing to the vehicle's elimination from further competition.
+Too costly for popular consumption, Lohner utilised the revolutionary drivetrain technology for larger commercial vehicles. Lohner-Werke manufactured rear-drive double-decker buses for Berlin and front-drive fire engines for the cities of Vienna, Frankfurt, and London. Lohner was commissioned to build vehicles for the Austrian emperor, as well as the kings of Norway, Romania and Sweden. According to a biography by Andreas Stieniczka, the funeral coach for Archduke Franz Ferdinand, whose murder in Sarajevo was the event which sparked off World War I, was manufactured by Lohner-Werke. Over 300 Lohner–Porsche vehicles were sold up to 1906.
+In addition to custom coachworks, Lohner supported Porsche's continued racing efforts. Several Austrian land speed records were set, with a top speed eventually achieving 37 mph (60 km/h) with Porsche at the wheel. It was victorious in a number of motorsport events including the Exelberg-Rally in 1901. With both drivetrain engineering excellence in Lohner's custom coaches and motorsport experience, Porsche won the 1905 Potting Prize as Austria's most outstanding automotive engineer. In 1906, Porsche was employed by Austro-Daimler as chief designer. Jacob Lohner said at the time: "He is very young, but is a man with a big career before him. You will hear of him again."
+
+The Vienna Fire Department had 40 fire-fighting vehicles, which were powered according to the Lohner-Porsche principle.
+The Lohner–Porsche's design was studied by Boeing and NASA to create the Apollo program's Lunar Roving Vehicle.  Many of its design principles were mirrored in the Rover's design. The series hybrid concept underpins many modern railway locomotives.
+
+
+== References ==
+
+
+== Further reading ==
+Porsche-Museum, Stuttgart: Ferdinand Porsche - Pionier des Hybridautomobils/Hybrid Automobile Pioneer , German/English, Edition-Porsche-Museum, Stuttgart 2010, ISBN 978-3-9812816-4-4.
+
+
+== External links ==
+
+Hybrid Vehicle History - more than a 100 years of evolution and refinement Archived 2020-08-01 at the Wayback Machine
+Lohner–Porsche: The Real Story (archived 2012-07-22)
+Thos. Electric-Car Competitions
