@@ -1,6 +1,7 @@
 import json
 import math
 import os
+import re
 import functools
 import time
 import urllib.request
@@ -89,28 +90,42 @@ class VectorStore:
 
     def _batch_fetch_wikipedia_content(self, titles: List[str]) -> Dict[str, Tuple[str, str]]:
         results = {}
+
         for i in range(0, len(titles), 20):
             batch = titles[i : i + 20]
-            titles_str = "|".join(urllib.parse.quote(t.replace(" ", "_")) for t in batch)
+            titles_str = "|".join(urllib.parse.quote(t) for t in batch)
             api = (
                 "https://en.wikipedia.org/w/api.php?"
-                "action=query&prop=extracts|info&explaintext&exlimit=max&titles={}&format=json&formatversion=2"
+                "action=query&prop=revisions|info&rvprop=content&titles={}&redirects=1&format=json&formatversion=2"
             ).format(titles_str)
             try:
-                req = urllib.request.Request(api, headers={'User-Agent': 'Mozilla/5.0'})
-                with urllib.request.urlopen(req, timeout=15) as resp:
+                req = urllib.request.Request(api, headers={"User-Agent": "PorscheRAG/1.0 (student project)"})
+                with urllib.request.urlopen(req, timeout=30) as resp:
                     data = json.loads(resp.read())
-                pages = data.get("query", {}).get("pages", [])
-                for page in pages:
+                for page in data.get("query", {}).get("pages", []):
                     if page.get("missing"):
                         continue
-                    title_name = page.get("title")
-                    text = page.get("extract", "").strip()
+                    resolved = page.get("title")
                     touched = page.get("touched", "")[:10]
-                    if title_name and text:
-                        results[title_name] = (text, touched)
+                    revisions = page.get("revisions", [])
+                    if not revisions:
+                        continue
+                    wikitext = revisions[0].get("content", "")
+                    # Strip wiki markup to plain text
+                    text = wikitext
+                    text = re.sub(r"'''?|'''?", "", text)
+                    text = re.sub(r"\[\[(?:[^|\]]*\|)?([^\]]+)\]\]", r"\1", text)
+                    text = re.sub(r"\{\{[^}]*\}\}", "", text)
+                    text = re.sub(r"<ref[^>]*>.*?</ref>", "", text, flags=re.DOTALL)
+                    text = re.sub(r"<[^>]+>", "", text)
+                    text = re.sub(r"={2,}\s*([^=]+)\s*={2,}", r"\n\n\1\n\n", text)
+                    text = re.sub(r"\n{3,}", "\n\n", text).strip()
+                    if text:
+                        results[resolved] = (text, touched)
             except Exception:
                 pass
+            time.sleep(1.5)
+
         return results
 
     def sync_with_folder(self, folder: str) -> int:
