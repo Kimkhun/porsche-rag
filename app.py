@@ -401,7 +401,19 @@ def load_store():
     _load_reranker()
     return store, docs, chunks
 
-store, docs, chunks = load_store()
+
+try:
+    store, docs, chunks = load_store()
+except Exception as e:
+    st.error(f"Failed to load: {e}")
+    if "JWT" in str(e) or "auth" in str(e).lower():
+        st.error(
+            "GCP auth error — your `gcp-key.json` may be expired, the system clock may be wrong, "
+            "or the service account lacks Vertex AI permissions. "
+            "Try re-downloading the key from GCP Console."
+        )
+    st.info("The app needs a valid GCP service account key at `gcp-key.json` to run.")
+    st.stop()
 
 with st.sidebar:
     st.markdown(f'<div class="sb-title">PORSCHE</div>', unsafe_allow_html=True)
