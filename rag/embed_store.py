@@ -39,6 +39,7 @@ class VectorStore:
         self._bm25_N: int = 0
         self._bm25_avgdl: float = 0.0
         self._bm25_df: Dict[str, int] = {}
+        self._bm25_inverted: Dict[str, List[int]] = {}
 
     def build(self, chunks: List[Chunk], dates: Dict[str, str] = None) -> None:
         texts = [c.text for c in chunks]
@@ -232,16 +233,31 @@ class VectorStore:
         self._bm25_N = N
         self._bm25_avgdl = sum(len(d) for d in self._bm25_corpus) / max(N, 1)
         df: Dict[str, int] = {}
-        for tokens in self._bm25_corpus:
-            for t in set(tokens):
-                df[t] = df.get(t, 0) + 1
+        inverted: Dict[str, List[int]] = {}
+        for i, tokens in enumerate(self._bm25_corpus):
+            seen = set()
+            for t in tokens:
+                if t not in seen:
+                    seen.add(t)
+                    df[t] = df.get(t, 0) + 1
+                    if t not in inverted:
+                        inverted[t] = []
+                    inverted[t].append(i)
         self._bm25_df = df
+        self._bm25_inverted = inverted
 
     def _bm25_scores(self, query_tokens: List[str]) -> np.ndarray:
         k1, b = 1.5, 0.75
         N, avgdl = self._bm25_N, self._bm25_avgdl
         scores = np.zeros(len(self._bm25_corpus), dtype=np.float32)
-        for i, doc_tokens in enumerate(self._bm25_corpus):
+        candidates: set = set()
+        for q in query_tokens:
+            if q in self._bm25_inverted:
+                candidates.update(self._bm25_inverted[q])
+        if not candidates:
+            return scores
+        for i in candidates:
+            doc_tokens = self._bm25_corpus[i]
             dl = len(doc_tokens)
             if dl == 0:
                 continue
