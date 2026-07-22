@@ -623,8 +623,8 @@ if "initialized" not in st.session_state:
         store = get_vector_store()
         
         # Sync files
-        update_loading_status(2, "Syncing Document Corpus", "Scanning local document directory and updating collection registry...")
-        store.sync_with_folder(DATA_FOLDER)
+        update_loading_status(2, "Syncing Document Corpus", "Preparing...")
+        store.sync_with_folder(DATA_FOLDER, progress_cb=lambda msg: update_loading_status(2, "Syncing Document Corpus", msg))
         
         # Get docs dynamically from ChromaDB metadata
         update_loading_status(3, "Loading Document Metadata", "Rebuilding memory mapping and loading titles...")

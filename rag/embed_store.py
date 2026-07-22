@@ -128,12 +128,17 @@ class VectorStore:
 
         return results
 
-    def sync_with_folder(self, folder: str) -> int:
+    def sync_with_folder(self, folder: str, progress_cb=None) -> int:
         registry = self._load_registry()
         current = {}
         loaded = 0
 
+        def _status(msg):
+            if progress_cb:
+                progress_cb(msg)
+
         # Step 1: Query ChromaDB to see what is already indexed
+        _status("Checking ChromaDB for existing documents...")
         try:
             existing_data = self.collection.get()
             indexed_titles = {
@@ -163,7 +168,9 @@ class VectorStore:
             missing_titles.append(title)
 
         if missing_titles:
+            _status(f"Fetching {len(missing_titles)} Wikipedia articles via API (batches of 20)...")
             batch_results = self._batch_fetch_wikipedia_content(missing_titles)
+            _status(f"Fetched {len(batch_results)} articles. Chunking text...")
             all_texts = []
             all_ids = []
             all_metadatas = []
@@ -178,9 +185,14 @@ class VectorStore:
                     all_ids.append(chunk_id)
                     all_metadatas.append({"doc_title": normalized_title, "chunk_id": chunk_id, "date": self.doc_dates.get(normalized_title, "")})
             if all_texts:
+                _status(f"Generating embeddings for {len(all_texts)} chunks via Vertex AI (batch size 250)...")
+                t0 = time.perf_counter()
                 embeddings = self._embed(all_texts)
+                elapsed = time.perf_counter() - t0
+                _status(f"Embeddings done ({elapsed:.1f}s). Storing in ChromaDB...")
                 self.collection.add(embeddings=embeddings.tolist(), documents=all_texts, metadatas=all_metadatas, ids=all_ids)
                 loaded = len(batch_results)
+                _status(f"Indexed {loaded} documents ({len(all_texts)} chunks)")
 
         # Step 3: Sync local files from target directory
         if os.path.exists(folder):
