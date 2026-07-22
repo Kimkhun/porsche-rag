@@ -127,12 +127,42 @@ class VectorStore:
                     wikitext = revisions[0].get("content", "")
                     # Strip wiki markup to plain text
                     text = wikitext
-                    text = re.sub(r"'''?|'''?", "", text)
+                    # Remove templates (handles nested and multi-line)
+                    while True:
+                        s = text.find("{{")
+                        if s == -1:
+                            break
+                        depth = 1
+                        e = s + 2
+                        while e < len(text) and depth > 0:
+                            if text[e:e+2] == "{{":
+                                depth += 1
+                                e += 2
+                            elif text[e:e+2] == "}}":
+                                depth -= 1
+                                e += 2
+                            else:
+                                e += 1
+                        text = text[:s] + text[e:]
+                    # Convert [[link|text]] to "text"; remove [[File:...]] entirely
+                    text = re.sub(r"\[\[(?:File|Image):[^\]]*\]\]", "", text)
                     text = re.sub(r"\[\[(?:[^|\]]*\|)?([^\]]+)\]\]", r"\1", text)
-                    text = re.sub(r"\{\{[^}]*\}\}", "", text)
+                    # Remove reference and HTML tags
                     text = re.sub(r"<ref[^>]*>.*?</ref>", "", text, flags=re.DOTALL)
                     text = re.sub(r"<[^>]+>", "", text)
+                    text = re.sub(r"<!--.*?-->", "", text, flags=re.DOTALL)
+                    # Remove __TOC__, __NOTOC__, __FORCETOC__, etc.
+                    text = re.sub(r"__\w+__", "", text)
+                    # Remove bold/italic markers
+                    text = text.replace("'''", "").replace("''", "")
+                    # Convert section headers to plain text
                     text = re.sub(r"={2,}\s*([^=]+)\s*={2,}", r"\n\n\1\n\n", text)
+                    # Remove remaining pipe-lines (infobox remnants)
+                    text = re.sub(r"^\s*\|.*", "", text, flags=re.MULTILINE)
+                    # Remove category links at the bottom
+                    text = re.sub(r"\n\[\[Category:[^\]]*\]\]", "", text)
+                    text = re.sub(r"\nCategory:[^\n]*", "", text)
+                    # Collapse whitespace
                     text = re.sub(r"\n{3,}", "\n\n", text).strip()
                     if text:
                         results[resolved] = (text, touched)
