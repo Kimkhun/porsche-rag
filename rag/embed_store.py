@@ -33,8 +33,7 @@ CORE_WIKIPEDIA_TITLES = [
     "Ruf Automobile", "Singer Vehicle Design", "Volkswagen Beetle",
     # Engines & technology
     "Porsche 547 engine", "Porsche 753 engine", "Porsche V10 engine",
-    "Porsche V8 engines", "Porsche flateight engines", "Porsche flatsix engine",
-    "Porsche flattwelve engine", "VarioCam", "VarioRam",
+    "Porsche V8 engines", "VarioCam", "VarioRam",
     # Motorsport
     "Porsche 804", "Porsche 906", "Porsche 907", "Porsche 908",
     "Porsche 909 Bergspyder", "Porsche 910", "Porsche 911 GT1", "Porsche 911 GT2",
@@ -42,8 +41,8 @@ CORE_WIKIPEDIA_TITLES = [
     "Porsche 918 Spyder", "Porsche 919 Hybrid", "Porsche 934", "Porsche 935",
     "Porsche 936", "Porsche 953", "Porsche 956", "Porsche 961", "Porsche 962",
     "Porsche 963", "Porsche Carrera Cup", "Porsche Carrera Cup Germany",
-    "Porsche Formula E Team", "Porsche LMP1-98", "Porsche RS Spyder",
-    "Porsche Supercup", "Porsche WSC95",
+    "Porsche Formula E Team", "Porsche RS Spyder", "Porsche Supercup",
+    "Porsche WSC-95",
     # Road cars
     "Cisitalia Grand Prix",
     "Lohner–Porsche", "Need for Speed: Porsche Unleashed",
@@ -53,16 +52,14 @@ CORE_WIKIPEDIA_TITLES = [
     "Porsche 911 (992)", "Porsche 911 (993)", "Porsche 911 (996)", "Porsche 911 (997)",
     "Porsche 911 (classic)", "Porsche 912", "Porsche 914", "Porsche 924",
     "Porsche 928", "Porsche 944", "Porsche 959", "Porsche 968", "Porsche 984",
-    "Porsche 989", "Porsche B32", "Porsche Boxster 986",
+    "Porsche 989", "Porsche B32", "Porsche Boxster (986)",
     "Porsche Boxster and Cayman", "Porsche Boxster and Cayman (981)",
     "Porsche Boxster and Cayman (987)", "Porsche C88", "Porsche Carrera GT",
-    "Porsche Cayenne", "Porsche Cayman", "Porsche Cayman GT4",
-    "Porsche Macan", "Porsche Mission E", "Porsche Panamera",
+    "Porsche Cayenne", "Porsche Macan", "Porsche Panamera",
     "Porsche Taycan", "Porsche Vision 357", "Porsche Vision Gran Turismo",
     # Concepts & special
-    "Porsche 3512", "Porsche Design Tower Stuttgart",
-    "Porsche Design Tower Sunny Isles Beach", "Porsche Unseen",
-    "Porsche Vision 357 Speedster",
+    "Porsche 3512", "Porsche Design Tower (Stuttgart)",
+    "Porsche Unseen", "Porsche Vision 357 Speedster",
 ]
 
 
