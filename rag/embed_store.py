@@ -230,8 +230,16 @@ class VectorStore:
                 t0 = time.perf_counter()
                 embeddings = self._embed(all_texts)
                 elapsed = time.perf_counter() - t0
-                _status(f"Embeddings done ({elapsed:.1f}s). Storing in ChromaDB...")
-                self.collection.add(embeddings=embeddings.tolist(), documents=all_texts, metadatas=all_metadatas, ids=all_ids)
+                _status(f"Embeddings done ({elapsed:.1f}s). Storing in ChromaDB (batching 5000)...")
+                embs = embeddings.tolist()
+                for i in range(0, len(all_texts), 5000):
+                    s = slice(i, i + 5000)
+                    self.collection.add(
+                        embeddings=embs[s],
+                        documents=all_texts[s],
+                        metadatas=all_metadatas[s],
+                        ids=all_ids[s],
+                    )
                 loaded = len(batch_results)
                 _status(f"Indexed {loaded} documents ({len(all_texts)} chunks)")
 
