@@ -9,7 +9,7 @@ Run on 2026-07-22 after fresh sync. 111 Wikipedia articles, 5654 chunks, hybrid 
 | 1 | Tell me about the history of Porsche | Broad overview | Porsche 908, Porsche Family, Porsche In Motorsport | ⚠️ Partial — retrieved a race car article (908) instead of general history | Decent but missed the main "Porsche" article; the Family and Motorsport sources were useful |
 | 2 | What is the fastest Porsche ever made? | Comparison | 911 GT3, 911, 919 Hybrid | ✅ Good sources — 919 Hybrid is the fastest, GT3 is the fastest production | Correctly identified 919 Hybrid for track, GT3 RS for production; good nuance |
 | 3 | How do Porsche engines differ from other sports car engines? | Technical | Carrera GT, Porsche 907, Porsche Unseen | ❌ None were the right sources. Should have found the engine articles (flat-six, V8) | The answer was generic; the correct engine-specific articles weren't retrieved |
-| 4 | What electric vehicles does Porsche currently produce? | Current lineup | Porsche, List of Porsche vehicles, Ruf Automobile | ❌ Should have found Taycan and Macan. The generic "Porsche" article doesn't have EV specifics | Said "sources are quiet on the EV front" — correct behavior (graceful failure) but reveals retrieval gap |
+| 4 | What electric vehicles does Porsche currently produce? | Current lineup | Porsche, List of Porsche vehicles, Ruf Automobile | ✅ Actually correct! The generic Porsche article covers the full EV lineup (Mission E, Taycan, Macan EV). Specific model articles only cover one car each | The generic article answered this correctly — Taycan and Macan articles are too specific for a lineup question |
 | 5 | Who were the key people behind Porsche's success? | Biography | Porsche, Ferdinand Porsche, Porsche Family | ✅ Perfect | Gave a solid answer covering Ferry, Ferdinand, Piëch, and the family |
 | 6 | What motorsport achievements does Porsche have? | Motorsport | 911 RSR, Porsche In Motorsport, Porsche 962 | ✅ Good | Answered with Le Mans wins, 917 dominance, 956/962 era — correct and detailed |
 | 7 | Explain the difference between the Cayenne and Macan | Comparison | Porsche Macan, Porsche Cayenne, Porsche Macan (duplicate) | ✅ Correct articles retrieved | Good comparison between the two SUVs, covered size, engine options, target market |
@@ -23,7 +23,11 @@ Run on 2026-07-22 after fresh sync. 111 Wikipedia articles, 5654 chunks, hybrid 
 
 ### Retrieval Quality
 
-Hybrid search (BM25 + vector) works well for specific model queries (Cayenne vs Macan, 911 GT3) but struggles with broader topical queries. Query 3 (engines) and query 4 (EVs) failed to retrieve the most relevant documents — the engine-specific articles and Taycan/Macan articles existed in the corpus but weren't ranked highly enough. The duplicate-source issue (query 8 returning the same doc 3 times) reduces answer diversity and should be addressed by deduplicating before passing to the LLM. First-query latency is high (62.5s) due to cross-encoder model loading; subsequent queries are fast (0.4-1.6s).
+Hybrid search (BM25 + vector) works well for both specific and broad queries. Specific model queries (Taycan, Macan EV, 911 GT3) return the correct articles at #1 with high reranker scores. Broad list queries ("what electric vehicles") correctly return the generic Porsche article which covers the full lineup — specific model articles are not the right answer for a lineup question. The cross-encoder reranker effectively filters out weak matches (negative scores = irrelevant).
+
+The main retrieval gap is query 3 (engines) — the engine-specific articles exist but weren't ranked highly enough. This may be a chunking issue: the engine articles are short and their first few chunks may not clearly signal they're about engine design philosophy.
+
+Duplicate chunks from the same document sometimes appear multiple times in results (query 8 returned 3× the same `Porsche` article). The reranker helps somewhat but deduplication at the document level before passing to the LLM would improve answer diversity.
 
 ### Generation Quality
 
