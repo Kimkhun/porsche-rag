@@ -39,7 +39,7 @@ def _build_llm_prompt(query: str, retrieved: List[Tuple[Chunk, float]], history:
     history_block = _format_history(history or [])
     prompt_parts = [
         f"Today's date: {today}\n",
-        "You are a knowledgeable Porsche enthusiast. Be conversational and cite which source(s) you used.",
+        "You are a Porsche expert. Answer clearly, directly, and cite which source(s) you used. Be concise — no fluff or forced enthusiasm.",
         "RULES:",
         "1. Base your answer on the sources. If the sources have related but not exact info, use it — connect the dots and note what you're inferring.",
         "2. If the sources truly have nothing relevant, say you don't have info on that specific topic.",

@@ -3,6 +3,7 @@ import math
 import os
 import re
 import functools
+import threading
 import time
 import urllib.request
 import urllib.parse
@@ -177,6 +178,10 @@ class VectorStore:
         def _status(msg):
             if progress_cb:
                 progress_cb(msg)
+
+        # Kick off cross-encoder download in background while we do other work
+        reranker_thread = threading.Thread(target=_load_reranker, daemon=True)
+        reranker_thread.start()
 
         # Step 1: Query ChromaDB to see what is already indexed
         _status("Checking ChromaDB for existing documents...")
@@ -430,6 +435,15 @@ class VectorStore:
             rerank_active = True
         t_rerank_end = time.perf_counter()
         
+        # Deduplicate: keep only the highest-scoring chunk per document
+        seen_docs: set = set()
+        deduped: List[Tuple[Chunk, float]] = []
+        for c, s in out:
+            if c.doc_title not in seen_docs:
+                seen_docs.add(c.doc_title)
+                deduped.append((c, s))
+        out = deduped
+
         self.last_query_timings = {
             "embed": t_after_embed - t_start,
             "chroma": t_after_chroma - t_after_embed,

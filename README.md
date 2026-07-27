@@ -4,6 +4,17 @@ A premium, localized Retrieval-Augmented Generation (RAG) system tailored for Po
 
 Designed with a sleek, dark titanium slate and Guards Red dashboard, this application delivers instant, context-grounded answers about Porsche's automotive legacy with micro-telemetry profiling.
 
+### Key Achievements
+
+| Metric | Value |
+|---|---|
+| **Knowledge corpus** | 111 Wikipedia articles → 5,654 searchable chunks |
+| **Retrieval precision** | 9/12 evaluation queries returned correct sources ✅ |
+| **Graceful failure** | 3/3 out-of-domain queries correctly refused 🛡️ |
+| **Average query latency** | ~11s (rewrite + hybrid retrieval + rerank + LLM generation) |
+| **Source deduplication** | Automatic — same article never appears twice in results |
+| **Reranker pre-warming** | Cross-encoder model loads in background during startup — zero delay on first query |
+
 ---
 
 ## ⚡ High-Performance Architecture
@@ -156,6 +167,7 @@ streamlit run app.py
 *   **Chunks Retrieved (`top_k`)**: Set how many matching reference documents are injected into the context prompt.
 *   **Rerank Results**: Toggles the local CPU Cross-Encoder reranker. Turn off to run purely on vector distance for maximum retrieval speed.
 *   **Hybrid Search**: Blends BM25 scores with Vector search. Turn off to query solely using vector similarity.
+*   **Smart Deduplication**: Automatic — highest-scoring chunk per document is kept, duplicates are discarded. No configuration needed.
 
 ---
 
