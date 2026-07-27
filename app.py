@@ -3,15 +3,30 @@ import json
 import time
 import streamlit as st
 
-gcp_path = os.path.join(os.path.dirname(__file__), "gcp-key.json")
-if os.path.exists(gcp_path):
-    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = gcp_path
-elif "gcp_key" in st.secrets:
-    key_data = json.loads(st.secrets["gcp_key"])
-    tmp = os.path.join(os.path.dirname(__file__), "gcp-key.json")
-    with open(tmp, "w") as f:
-        json.dump(key_data, f)
-    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = tmp
+# Write gcp-key.json from Streamlit secrets if it doesn't exist locally
+_gcp_path = os.path.join(os.path.dirname(__file__), "gcp-key.json")
+print(f"[debug] Looking for gcp-key.json at: {_gcp_path}", flush=True)
+print(f"[debug] File exists: {os.path.exists(_gcp_path)}", flush=True)
+print(f"[debug] Secrets keys available: {list(st.secrets.keys())}", flush=True)
+if not os.path.exists(_gcp_path):
+    try:
+        raw = st.secrets.get("gcp_key", "")
+        print(f"[debug] gcp_key secret found: {bool(raw)}", flush=True)
+        if raw:
+            if isinstance(raw, str):
+                data = json.loads(raw)
+            else:
+                data = raw
+            with open(_gcp_path, "w") as f:
+                json.dump(data, f)
+            print(f"[debug] Wrote gcp-key.json from secrets ({len(data)} keys)", flush=True)
+    except Exception as e:
+        print(f"[debug] Failed to write gcp-key.json from secrets: {e}", flush=True)
+if os.path.exists(_gcp_path):
+    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = _gcp_path
+    print(f"[debug] GOOGLE_APPLICATION_CREDENTIALS set to {_gcp_path}", flush=True)
+else:
+    print(f"[debug] No gcp-key.json available - GCP auth will fail", flush=True)
 os.environ["HF_HUB_DISABLE_SYMLINKS_WARNING"] = "1"
 
 from rag.ingest import load_documents
