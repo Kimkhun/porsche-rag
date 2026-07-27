@@ -689,7 +689,7 @@ with st.sidebar:
     st.markdown(f'<div class="sb-title">PORSCHE</div>', unsafe_allow_html=True)
     st.markdown(f'<div class="sb-sub">Knowledge System</div>', unsafe_allow_html=True)
 
-    top_k = st.slider("Chunks retrieved", min_value=1, max_value=10, value=3)
+    top_k = st.slider("Chunks retrieved", min_value=1, max_value=10, value=5)
     rerank = st.toggle("Rerank results", value=True)
     hybrid = st.toggle("Hybrid search (BM25 + vector)", value=True)
 

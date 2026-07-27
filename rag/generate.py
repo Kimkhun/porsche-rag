@@ -61,6 +61,9 @@ def rewrite_search_query(raw_query: str, history: List[dict] = None) -> str:
         "You are a search query optimizer. Given a conversation and a user's latest question, "
         "rewrite the question into a concise, specific search query that will find the relevant information. "
         "Disambiguate pronouns like 'it', 'they', 'that', 'the company' using context. "
+        "If the question asks about a broad category (e.g. electric vehicles, SUVs, race cars), "
+        "expand it with specific known model names (e.g. include 'Taycan', 'Macan', 'Cayenne') "
+        "to help the search find the right articles. "
         "Output ONLY the rewritten query, nothing else.\n\n"
     )
     if hist_block:
