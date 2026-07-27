@@ -512,8 +512,16 @@ class VectorStore:
         all_embeddings = []
         for i in range(0, len(texts), batch_size):
             batch = texts[i : i + batch_size]
-            result = self.client.models.embed_content(
-                model="gemini-embedding-001", contents=batch
-            )
-            all_embeddings.extend([e.values for e in result.embeddings])
+            for attempt in range(3):
+                try:
+                    result = self.client.models.embed_content(
+                        model="gemini-embedding-001", contents=batch
+                    )
+                    all_embeddings.extend([e.values for e in result.embeddings])
+                    break
+                except Exception:
+                    if attempt < 2:
+                        time.sleep(2 ** attempt)
+                    else:
+                        raise
         return np.array(all_embeddings, dtype=np.float32)

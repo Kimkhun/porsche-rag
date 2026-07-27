@@ -147,30 +147,45 @@ def _split_sentences(text: str) -> List[str]:
     return [s.strip() for s in sentences if s.strip()]
 
 
-def chunk_text(text: str, max_words: int = 80) -> List[str]:
+def chunk_text(text: str, max_words: int = 80, overlap_sentences: int = 2) -> List[str]:
     paragraphs = re.split(r"\n\s*\n", text.strip())
     chunks = []
+    prev_tail: List[str] = []
     for para in paragraphs:
         para = para.strip()
         if not para:
             continue
         words = para.split()
         if len(words) <= max_words:
-            chunks.append(para)
+            chunk = para
+            if prev_tail:
+                chunk = " ".join(prev_tail) + " " + chunk
+            chunks.append(chunk)
+            prev_tail = _split_sentences(para)[-overlap_sentences:] if overlap_sentences else []
         else:
             sentences = _split_sentences(para)
+            all_sents = list(prev_tail)
+            prev_tail = []
             buf = []
             count = 0
             for s in sentences:
                 s_words = s.split()
                 if count + len(s_words) > max_words and buf:
-                    chunks.append(" ".join(buf))
+                    chunk_text = " ".join(buf)
+                    if all_sents:
+                        chunk_text = " ".join(all_sents) + " " + chunk_text
+                        all_sents = []
+                    chunks.append(chunk_text)
                     buf = []
                     count = 0
                 buf.append(s)
                 count += len(s_words)
             if buf:
-                chunks.append(" ".join(buf))
+                final_chunk = " ".join(buf)
+                if all_sents:
+                    final_chunk = " ".join(all_sents) + " " + final_chunk
+                chunks.append(final_chunk)
+            prev_tail = sentences[-overlap_sentences:] if overlap_sentences else []
     return chunks if chunks else [text]
 
 
