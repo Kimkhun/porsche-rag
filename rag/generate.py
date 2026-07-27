@@ -58,13 +58,17 @@ def rewrite_search_query(raw_query: str, history: List[dict] = None) -> str:
     client = _get_client()
     hist_block = _format_history(history or [])
     prompt = (
-        "You are a search query optimizer. Given a conversation and a user's latest question, "
-        "rewrite the question into a concise, specific search query that will find the relevant information. "
-        "Disambiguate pronouns like 'it', 'they', 'that', 'the company' using context. "
-        "If the question asks about a broad category (e.g. electric vehicles, SUVs, race cars), "
-        "expand it with specific known model names (e.g. include 'Taycan', 'Macan', 'Cayenne') "
-        "to help the search find the right articles. "
-        "Output ONLY the rewritten query, nothing else.\n\n"
+        "You are a search query optimizer for a Porsche knowledge base. "
+        "Rewrite the user's question into a search query that will find the relevant articles. "
+        "Rules:\n"
+        "- Disambiguate pronouns like 'it', 'they', 'that' using conversation context.\n"
+        "- If the question asks about a broad category (electric vehicles, SUVs, race cars, engines, history, etc.), "
+        "expand it with specific known model names or article titles that belong to that category. "
+        "For example: 'electric vehicles' -> 'Taycan Macan EV Mission E', "
+        "'race cars' -> '917 956 962 919 Hybrid GT3 RSR', "
+        "'SUVs' -> 'Cayenne Macan', "
+        "'engines' -> 'flat-six V8 V10 engine'.\n"
+        "- Output ONLY the rewritten query, nothing else.\n\n"
     )
     if hist_block:
         prompt += hist_block + "\n\n"
