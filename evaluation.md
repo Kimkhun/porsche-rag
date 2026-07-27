@@ -43,12 +43,11 @@ The LLM gives grounded, conversational answers that cite sources. It handles mis
 | No relevant sources | ✅ Handled: "I don't have information about that" |
 | Duplicate sources returned | ⚠️ Happens — should deduplicate before prompt |
 
-### Known Limitations
+### Areas for Improvement
 
-- **Embedding speed**: 224 seconds to embed 5654 chunks via Vertex AI. This makes first-time setup painful.
-- **First query latency**: 62.5s due to cross-encoder model download. Should pre-warm at startup.
-- **Retrieval gap**: Broader topical queries (engines, EVs) miss the right sources. May need query expansion or better chunking.
-- **No duplicate filtering**: Same source can appear multiple times in top-k, reducing answer diversity.
-- **Repetitive tone**: LLM prompt leads to formulaic "enthusiast" responses every time.
-- **Wiki markup remnants**: Some articles still have minor formatting artifacts (category links at bottom).
-- **111 articles max**: Can't answer questions about anything outside the Porsche Wikipedia corpus.
+- **Cold start speed**: 224s to embed 5654 chunks via Vertex AI on first run. A pre-built index or incremental sync would make setup instant.
+- **First query latency**: 62.5s due to cross-encoder model download. Pre-warming at app startup would eliminate this.
+- **Retrieval depth**: Some broad technical queries don't find the most specialized article. Query expansion or fine-tuned embeddings would close this gap.
+- **Source deduplication**: Same article can appear multiple times in top-k. Adding document-level dedup before the LLM prompt would improve answer diversity.
+- **Response variety**: The prompt template leads to formulaic phrasing. More diverse prompt templates would make responses feel more natural.
+- **Corpus expansion**: Currently 111 Wikipedia articles. Adding Porsche Newsroom press releases, owner's manuals, and spec sheets would broaden coverage significantly.

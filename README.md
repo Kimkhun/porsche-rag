@@ -161,19 +161,19 @@ streamlit run app.py
 
 ---
 
-## ⚠️ Known Limitations
+## 🔮 Future Improvements
 
-See [evaluation.md](evaluation.md) for a full discussion with test results.
+See [evaluation.md](evaluation.md) for a full evaluation with test results and discussion.
 
-| Limitation | Impact |
-|---|---|
-| **First-time setup is slow** | ~4 min to fetch + embed 111 Wikipedia articles on first run (cached afterward) |
-| **First query latency** | ~60s due to cross-encoder model download. Pre-warms in background |
-| **Some retrieval gaps** | Broad engine/technical queries don't always find the right specialized article |
-| **Duplicate sources** | Same article can appear multiple times in top-k results, reducing answer diversity |
-| **Repetitive tone** | LLM prompt leads to formulaic "enthusiast" phrasing in every response |
-| **Corpus limited to 111 articles** | Cannot answer outside Porsche Wikipedia content. No real-time news or pricing |
-| **Minor wiki markup artifacts** | Some article text retains formatting remnants (category links, etc.) |
+| Area | Current | Planned improvement |
+|---|---|---|
+| **Cold start speed** | ~4 min on first run (fetch + embed) | Pre-built index download or incremental sync |
+| **First query latency** | ~60s (cross-encoder model download) | Pre-warm model on startup |
+| **Retrieval precision** | Some broad technical queries miss specialized articles | Query expansion + fine-tuned embeddings |
+| **Source diversity** | Same article can appear multiple times in top-k | Document-level dedup before LLM prompt |
+| **Response tone** | Formulaic "enthusiast" phrasing | More varied prompt templates |
+| **Corpus scope** | 111 Wikipedia articles | Add Newsroom API, owner's manuals, spec sheets |
+| **Text formatting** | Minor wiki markup artifacts in some chunks | Improved wikitext parser |
 
 ## 📊 Telemetry Diagnostics
 
