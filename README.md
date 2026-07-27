@@ -159,6 +159,22 @@ streamlit run app.py
 
 ---
 
+---
+
+## ⚠️ Known Limitations
+
+See [evaluation.md](evaluation.md) for a full discussion with test results.
+
+| Limitation | Impact |
+|---|---|
+| **First-time setup is slow** | ~4 min to fetch + embed 111 Wikipedia articles on first run (cached afterward) |
+| **First query latency** | ~60s due to cross-encoder model download. Pre-warms in background |
+| **Some retrieval gaps** | Broad engine/technical queries don't always find the right specialized article |
+| **Duplicate sources** | Same article can appear multiple times in top-k results, reducing answer diversity |
+| **Repetitive tone** | LLM prompt leads to formulaic "enthusiast" phrasing in every response |
+| **Corpus limited to 111 articles** | Cannot answer outside Porsche Wikipedia content. No real-time news or pricing |
+| **Minor wiki markup artifacts** | Some article text retains formatting remnants (category links, etc.) |
+
 ## 📊 Telemetry Diagnostics
 
 Under every assistant message bubble, a detailed telemetry row displays exactly where execution time was spent:
