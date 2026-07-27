@@ -179,8 +179,9 @@ h1, h2, h3, .syncopate {{
     border: 1px solid {BORDER}; 
 }}
 .av-svg {{
-    width: 18px;
-    height: 18px;
+    width: 20px;
+    height: 24px;
+    display: block;
 }}
 
 .bubble {{ 
@@ -471,12 +472,16 @@ USER_SVG = """
 """
 
 ASSISTANT_SVG = """
-<svg class="av-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-  <path d="M12 2L3 7v9c0 5 9 7 9 7s9-2 9-7V7l-9-5z"/>
-  <path d="M12 22V12" stroke-width="1.5"/>
-  <path d="M8 8h8" stroke-width="1.5"/>
-  <path d="M8 12h8" stroke-width="1.5"/>
-  <path d="M8 16h8" stroke-width="1.5"/>
+<svg class="av-svg" viewBox="0 0 60 70" xmlns="http://www.w3.org/2000/svg">
+  <path d="M30 2 L52 12 V38 C52 53 42 63 30 68 C18 63 8 53 8 38 V12 Z" fill="#18181b" stroke="#c5a059" stroke-width="1.5"/>
+  <path d="M30 2 V35 H51" stroke="#c5a059" stroke-width="0.8"/>
+  <path d="M30 35 H9" stroke="#c5a059" stroke-width="0.8"/>
+  <path d="M12 18 H26 M12 26 H26" stroke="#e30613" stroke-width="2.5"/>
+  <path d="M34 44 H48 M34 52 H48" stroke="#e30613" stroke-width="2.5"/>
+  <path d="M35 18 C38 18 42 22 45 18 M35 25 C38 25 42 29 45 25" stroke="#c5a059" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+  <path d="M25 44 C22 44 18 48 15 44 M25 51 C22 51 18 55 15 51" stroke="#c5a059" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+  <path d="M24 25 H36 V43 C36 48 30 52 30 52 C30 52 24 48 24 43 Z" fill="#c5a059" stroke="#000" stroke-width="0.8"/>
+  <path d="M29 33 C29 33 27 34 27 36 C27 38 31 37 30 41" stroke="#000" stroke-width="1.5" stroke-linecap="round" fill="none"/>
 </svg>
 """
 
