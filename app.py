@@ -767,10 +767,7 @@ if prompt := st.chat_input("Ask about model specs, lap times, engineering..."):
     t0 = time.perf_counter()
     with st.spinner("Analyzing queries..."):
         t1 = time.perf_counter()
-        if hist:
-            search_query = rewrite_search_query(prompt, hist)
-        else:
-            search_query = prompt
+        search_query = rewrite_search_query(prompt, hist)
         t2 = time.perf_counter()
         retrieved = store.query(search_query, top_k=top_k, rerank=rerank, hybrid=hybrid)
         t3 = time.perf_counter()
