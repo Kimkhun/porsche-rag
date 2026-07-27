@@ -337,7 +337,7 @@ class VectorStore:
             json.dump(registry, f, indent=2)
 
     def query(self, query_text: str, top_k: int = 3, rerank: bool = True, hybrid: bool = True) -> List[Tuple[Chunk, float]]:
-        fetch_k = min(top_k * 2, self.collection.count() or 1)
+        fetch_k = min(top_k * 5, self.collection.count() or 1)
 
         if hybrid and self._bm25_N == 0:
             self._rebuild_bm25()
