@@ -1,10 +1,17 @@
 import os
+import json
 import time
 import streamlit as st
 
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = os.path.join(
-    os.path.dirname(__file__), "gcp-key.json"
-)
+gcp_path = os.path.join(os.path.dirname(__file__), "gcp-key.json")
+if os.path.exists(gcp_path):
+    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = gcp_path
+elif "gcp_key" in st.secrets:
+    key_data = json.loads(st.secrets["gcp_key"])
+    tmp = os.path.join(os.path.dirname(__file__), "gcp-key.json")
+    with open(tmp, "w") as f:
+        json.dump(key_data, f)
+    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = tmp
 os.environ["HF_HUB_DISABLE_SYMLINKS_WARNING"] = "1"
 
 from rag.ingest import load_documents
