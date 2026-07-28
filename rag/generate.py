@@ -57,24 +57,21 @@ def _build_llm_prompt(query: str, retrieved: List[Tuple[Chunk, float]], history:
 def rewrite_search_query(raw_query: str, history: List[dict] = None) -> str:
     client = _get_client()
     is_followup = bool(history)
-    recent = history[-2:] if history else []
-    hist_block = _format_history(recent)
+    # Use full history for better context understanding
+    hist_block = _format_history(history or [])
 
     if is_followup:
         prompt = (
             "You are a search query optimizer for a Porsche knowledge base. "
-            "The user is asking a follow-up question. Your job is to rewrite it into a SHORT, focused search query "
-            "(10-30 words maximum) that will find the relevant article. "
+            "The user is asking a follow-up question within an ongoing conversation. "
+            "Read the conversation history carefully, then rewrite the latest question into a search query "
+            "that will find the specific article being asked about.\n"
             "Rules:\n"
-            "- Infer the subject from the conversation history and include it.\n"
-            "- Disambiguate pronouns like 'it', 'they', 'that' using context.\n"
-            "- Include ONLY the specific topic being asked about — do NOT expand to everything.\n"
-            "- Keep it short: just the subject + the specific aspect asked about.\n"
-            "Examples:\n"
-            "  Context: 'What EVs does Porsche make?' / 'The Taycan...' -> 'tell me more about its design' -> 'Taycan design exterior interior'\n"
-            "  Context: 'Tell me about the 911' / 'The 911 is a sports car...' -> 'what engine does it use' -> '911 engine flat-six'\n"
-            "  Context: 'Cayenne vs Macan difference' / 'The Cayenne is larger...' -> 'how about their prices' -> 'Cayenne Macan price cost'\n"
-            "Output ONLY the rewritten query (10-30 words).\n\n"
+            "- Identify the subject from the conversation and include it explicitly.\n"
+            "- Disambiguate pronouns and vague references ('it', 'they', 'that', 'its', 'this car') using context.\n"
+            "- Output ONLY the essential terms needed to find the right article.\n"
+            "- Do NOT expand to unrelated terms.\n"
+            "- Keep it concise.\n\n"
         )
     else:
         prompt = (
@@ -106,7 +103,7 @@ def rewrite_search_query(raw_query: str, history: List[dict] = None) -> str:
     if hist_block:
         prompt += hist_block + "\n\n"
     prompt += f"Latest question: {raw_query}\nRewritten query:"
-    response = client.models.generate_content(model="gemini-3.5-flash-lite", contents=prompt)
+    response = client.models.generate_content(model="gemini-3.5-flash", contents=prompt)
     return response.text.strip()
 
 
