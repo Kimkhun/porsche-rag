@@ -90,7 +90,7 @@ def rewrite_search_query(raw_query: str, history: List[dict] = None) -> str:
     if hist_block:
         prompt += hist_block + "\n\n"
     prompt += f"Latest question: {raw_query}\nRewritten query:"
-    response = client.models.generate_content(model="gemini-3.5-flash-lite", contents=prompt)
+    response = client.models.generate_content(model="gemini-3.5-flash", contents=prompt)
     return response.text.strip()
 
 
