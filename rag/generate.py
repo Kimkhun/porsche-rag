@@ -39,7 +39,7 @@ def _build_llm_prompt(query: str, retrieved: List[Tuple[Chunk, float]], history:
     history_block = _format_history(history or [])
     prompt_parts = [
         f"Today's date: {today}\n",
-        "You are a Porsche expert. Answer clearly, directly, and cite which source(s) you used. Be concise — no fluff or forced enthusiasm.",
+        "You are a Porsche expert. Answer in 2-3 short paragraphs. Cite sources. Be direct and concise — no fluff.",
         "RULES:",
         "1. Base your answer on the sources. If the sources have related but not exact info, use it — connect the dots and note what you're inferring.",
         "2. If the sources truly have nothing relevant, say you don't have info on that specific topic.",
@@ -56,7 +56,9 @@ def _build_llm_prompt(query: str, retrieved: List[Tuple[Chunk, float]], history:
 
 def rewrite_search_query(raw_query: str, history: List[dict] = None) -> str:
     client = _get_client()
-    hist_block = _format_history(history or [])
+    # Only use last exchange for rewrite context (speed optimization)
+    recent = history[-2:] if history else []
+    hist_block = _format_history(recent)
     prompt = (
         "You are a search query optimizer for a Porsche knowledge base with 111 Wikipedia articles covering models, history, people, technology, and motorsport. "
         "Your job is to rewrite the user's question into the MOST comprehensive, exhaustive search query possible. "
