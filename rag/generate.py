@@ -56,26 +56,42 @@ def _build_llm_prompt(query: str, retrieved: List[Tuple[Chunk, float]], history:
 
 def rewrite_search_query(raw_query: str, history: List[dict] = None) -> str:
     client = _get_client()
-    # Only use last exchange for rewrite context (speed optimization)
+    is_followup = bool(history)
     recent = history[-2:] if history else []
     hist_block = _format_history(recent)
-    prompt = (
-        "You are a search query optimizer for a Porsche knowledge base with 111 Wikipedia articles covering models, history, people, technology, and motorsport. "
-        "Your job is to rewrite the user's question into the MOST comprehensive, exhaustive search query possible. "
-        "Every term you add increases the chance BM25 keyword search finds the right articles. "
-        "Rules:\n"
-        "- Include the original terms AND every related model name, code name, generation number, technical term, person name, year, synonym, and concept.\n"
-        "- Disambiguate pronouns like 'it', 'they', 'that' using conversation context.\n"
-        "- For follow-up questions or fragments without an explicit subject (e.g. 'acceleration from 0 to what', 'how fast', 'tell me more', 'what about the engine'), infer the subject from the last relevant conversation turn and include it in the rewritten query.\n"
-        "- For broad topics: list ALL models, people, concepts, and terms in that category.\n"
-        "- For specific models: include all generation codes, variants, engine types, years, and related models.\n"
-        "- For comparisons: include both items, their differences, categories, and shared terms.\n"
-        "- For people: include full name, nickname, role, contributions, and associated models.\n"
-        "- For technical topics: include every related engineering term, system, and component.\n"
-        "- For history: include era names, years, locations, people, and key events.\n"
-        "- For motorsport: include series names, cars, drivers, teams, years, tracks, championships.\n"
-        "- For design: include designer names, design elements, philosophy, generations.\n"
-        "Generate the most exhaustive query possible — 50 to 200+ terms is normal.\n"
+
+    if is_followup:
+        prompt = (
+            "You are a search query optimizer for a Porsche knowledge base. "
+            "The user is asking a follow-up question. Your job is to rewrite it into a SHORT, focused search query "
+            "(10-30 words maximum) that will find the relevant article. "
+            "Rules:\n"
+            "- Infer the subject from the conversation history and include it.\n"
+            "- Disambiguate pronouns like 'it', 'they', 'that' using context.\n"
+            "- Include ONLY the specific topic being asked about — do NOT expand to everything.\n"
+            "- Keep it short: just the subject + the specific aspect asked about.\n"
+            "Examples:\n"
+            "  Context: 'What EVs does Porsche make?' / 'The Taycan...' -> 'tell me more about its design' -> 'Taycan design exterior interior'\n"
+            "  Context: 'Tell me about the 911' / 'The 911 is a sports car...' -> 'what engine does it use' -> '911 engine flat-six'\n"
+            "  Context: 'Cayenne vs Macan difference' / 'The Cayenne is larger...' -> 'how about their prices' -> 'Cayenne Macan price cost'\n"
+            "Output ONLY the rewritten query (10-30 words).\n\n"
+        )
+    else:
+        prompt = (
+            "You are a search query optimizer for a Porsche knowledge base with 111 Wikipedia articles. "
+            "Your job is to rewrite the user's question into the MOST comprehensive, exhaustive search query possible. "
+            "Every term you add increases the chance BM25 keyword search finds the right articles. "
+            "Rules:\n"
+            "- Include the original terms AND every related model name, code name, generation number, technical term, person name, year, synonym, and concept.\n"
+            "- For broad topics: list ALL models, people, concepts, and terms in that category.\n"
+            "- For specific models: include all generation codes, variants, engine types, years, and related models.\n"
+            "- For comparisons: include both items, their differences, categories, and shared terms.\n"
+            "- For people: include full name, nickname, role, contributions, and associated models.\n"
+            "- For technical topics: include every related engineering term, system, and component.\n"
+            "- For history: include era names, years, locations, people, and key events.\n"
+            "- For motorsport: include series names, cars, drivers, teams, years, tracks, championships.\n"
+            "- For design: include designer names, design elements, philosophy, generations.\n"
+            "Generate the most exhaustive query possible — 50 to 200+ terms is normal.\n"
         "Examples:\n"
         "  'What electric vehicles does Porsche make?' -> 'Taycan Cross Turismo Sport Turismo Turbo Turbo S 4S base RWD sedan estate shooting brake Macan EV electric 718 Boxster Cayman EV Mission E Mission R Mission X Cross Turismo concept battery electric vehicle BEV hybrid plug-in hybrid PHEV Panamera S E-Hybrid 4 E-Hybrid Turbo S E-Hybrid Cayenne E-Hybrid Coupe 911 T-Hybrid Carrera GTS electrified J1 platform PPE Premium Platform Electric SSP electric motor PSM permanent magnet synchronous battery pack 800V 800-volt lithium-ion NCM prismatic cells recuperation regenerative braking charging AC DC fast charging range WLTP EPA electricity zero-emission sustainable e-mobility e-performance Porsche Electric strategy carbon neutrality 2025 2030'\n"
         "  'Tell me about the 911' -> 'Porsche 911 901 original classic 930 964 993 996 997 991 992 generations evolution history heritage icon sports car rear-engine rear-engined flat-six boxer air-cooled water-cooled Carrera Carrera S Carrera 4S GTS Turbo Turbo S GT3 GT3 RS GT2 GT2 RS Targa Targa 4 Targa 4S Cabriolet Speedster S/T Sport Classic Dakar rally Safari off-road Mezger engine DFI direct fuel injection VTG variable turbine geometry PDK dual-clutch transmission 7-speed 8-speed manual 7-speed rear-wheel drive all-wheel drive PASM active suspension torque vectoring PTV rear-axle steering carbon ceramic brakes PCCB lightweight aluminum steel chassis production 1963 1964 1965 2024 2025 anniversary limited edition special model Weissach package Clubsport package wing spoiler aerodynamics coupe convertible grand tourer motorsport racing heritage iconic silhouette design evolution Ferdinand Alexander Porsche Butzi HVA Hermann Valentin design philosophy timeless classic modern reinterpretation luxury sports car benchmark performance driver-focused dynamics handling steering feedback Nurburgring lap time top speed acceleration horsepower hp PS kw torque Nm lb-ft displacement 3.0 3.8 4.0 liter naturally aspirated twin-turbocharged intercooler'\n"
