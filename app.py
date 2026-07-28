@@ -503,6 +503,13 @@ def get_vector_store():
 def get_cached_docs():
     return load_documents(DATA_FOLDER)
 
+# Force re-sync if button was clicked
+if st.session_state.pop("_wipe_index", False):
+    import shutil
+    idx = os.path.join(os.path.dirname(__file__), "data", "index")
+    if os.path.exists(idx):
+        shutil.rmtree(idx, ignore_errors=True)
+
 # Initialize and track setup stage using session state to prevent flashing on message reruns
 if "initialized" not in st.session_state:
     loading_placeholder = st.empty()
@@ -692,6 +699,11 @@ with st.sidebar:
     top_k = st.slider("Chunks retrieved", min_value=1, max_value=10, value=5)
     rerank = st.toggle("Rerank results", value=True)
     hybrid = st.toggle("Hybrid search (BM25 + vector)", value=True)
+
+    if st.button("Force Re-sync (wipe & re-fetch)", type="secondary", use_container_width=True):
+        st.cache_resource.clear()
+        st.session_state["_wipe_index"] = True
+        st.rerun()
 
     st.markdown(f"""
     <div class="sb-card">
