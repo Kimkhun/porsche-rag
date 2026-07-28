@@ -510,7 +510,7 @@ if st.session_state.pop("_wipe_index", False):
     for _ in range(3):
         if os.path.exists(idx):
             try:
-                shutil.rmtree(idx)
+                shutil.rmtree(idx, ignore_errors=True)
                 break
             except Exception:
                 time.sleep(1)
