@@ -505,10 +505,17 @@ def get_cached_docs():
 
 # Force re-sync if button was clicked
 if st.session_state.pop("_wipe_index", False):
-    import shutil
+    import shutil, time
     idx = os.path.join(os.path.dirname(__file__), "data", "index")
-    if os.path.exists(idx):
-        shutil.rmtree(idx, ignore_errors=True)
+    for _ in range(3):
+        if os.path.exists(idx):
+            try:
+                shutil.rmtree(idx)
+                break
+            except Exception:
+                time.sleep(1)
+    os.makedirs(idx, exist_ok=True)
+    st.cache_resource.clear()
 
 # Initialize and track setup stage using session state to prevent flashing on message reruns
 if "initialized" not in st.session_state:
