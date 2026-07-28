@@ -64,6 +64,7 @@ def rewrite_search_query(raw_query: str, history: List[dict] = None) -> str:
         "Rules:\n"
         "- Include the original terms AND every related model name, code name, generation number, technical term, person name, year, synonym, and concept.\n"
         "- Disambiguate pronouns like 'it', 'they', 'that' using conversation context.\n"
+        "- For follow-up questions or fragments without an explicit subject (e.g. 'acceleration from 0 to what', 'how fast', 'tell me more', 'what about the engine'), infer the subject from the last relevant conversation turn and include it in the rewritten query.\n"
         "- For broad topics: list ALL models, people, concepts, and terms in that category.\n"
         "- For specific models: include all generation codes, variants, engine types, years, and related models.\n"
         "- For comparisons: include both items, their differences, categories, and shared terms.\n"
