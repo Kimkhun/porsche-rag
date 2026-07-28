@@ -687,13 +687,13 @@ if "initialized" not in st.session_state:
                 "GCP auth error — your `gcp-key.json` may be expired, the system clock may be wrong, "
                 "or the service account lacks Vertex AI permissions. "
             )
-        elif "database" in estr.lower() or "no such table" in estr.lower():
+        elif "database" in estr.lower() or "no such table" in estr.lower() or "chromadb" in estr.lower() or "collection" in estr.lower():
             st.error(
-                "ChromaDB database issue — this can happen after a forced restart. "
+                "ChromaDB database issue — this can happen after a forced restart or update. "
                 "Use the **Force Re-sync** button below to rebuild the index from scratch."
             )
         else:
-            st.info("The app needs a valid GCP service account key at `gcp-key.json` to run.")
+            st.info("Unknown startup error. If this persists, click Force Re-sync below.")
         # Set fallback values so sidebar renders (with Force Re-sync button)
         store = None
         docs = []

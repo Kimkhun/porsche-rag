@@ -91,6 +91,8 @@ class VectorStore:
                 shutil.rmtree(db_path, ignore_errors=True)
                 os.makedirs(db_path, exist_ok=True)
                 time.sleep(1)
+        if not hasattr(self, "collection"):
+            raise RuntimeError("Failed to initialize ChromaDB after 3 attempts")
         self.doc_dates: Dict[str, str] = {}
         self._bm25_ids: List[str] = []
         self._bm25_corpus: List[List[str]] = []
