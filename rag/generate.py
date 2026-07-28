@@ -6,7 +6,7 @@ from google import genai
 from .ingest import Chunk
 
 PROJECT_ID = "project-bc66562d-f62f-4bdd-91e"
-LOCATION = "us-central1"
+LOCATION = "asia-southeast1"
 MAX_HISTORY = 999
 
 _CLIENT = None

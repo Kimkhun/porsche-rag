@@ -16,7 +16,7 @@ from google import genai
 from .ingest import Chunk, chunk_text, _extract_date, _batch_fetch_wikipedia_dates
 
 PROJECT_ID = "project-bc66562d-f62f-4bdd-91e"
-LOCATION = "us-central1"
+LOCATION = "asia-southeast1"
 INDEX_DIR = os.path.join(os.path.dirname(__file__), "..", "data", "index")
 
 CORE_WIKIPEDIA_TITLES = [
