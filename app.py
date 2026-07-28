@@ -699,14 +699,15 @@ if "initialized" not in st.session_state:
         docs = []
         chunks = 0
 else:
-    store = get_vector_store()
     try:
+        store = get_vector_store()
         existing_data = store.collection.get()
         unique_titles = sorted(list({meta["doc_title"] for meta in existing_data.get("metadatas", []) if meta and "doc_title" in meta}))
         docs = [{"title": title} for title in unique_titles]
+        chunks = store.collection.count()
     except Exception:
-        docs = []
-    chunks = store.collection.count()
+        st.cache_resource.clear()
+        st.rerun()
 
 with st.sidebar:
     st.markdown(f'<div class="sb-title">PORSCHE</div>', unsafe_allow_html=True)
@@ -719,6 +720,7 @@ with st.sidebar:
     if st.button("Force Re-sync (wipe & re-fetch)", type="secondary", use_container_width=True):
         st.cache_resource.clear()
         st.session_state["_wipe_index"] = True
+        st.session_state.pop("initialized", None)
         st.rerun()
 
     st.markdown(f"""
