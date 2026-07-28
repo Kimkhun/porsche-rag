@@ -77,22 +77,20 @@ class VectorStore:
         )
         db_path = os.path.join(INDEX_DIR, "chroma")
         os.makedirs(db_path, exist_ok=True)
-        try:
-            self.db = chromadb.PersistentClient(path=db_path)
-            self.collection = self.db.get_or_create_collection(
-                name="porsche_docs",
-                metadata={"hnsw:space": "cosine"},
-            )
-        except Exception:
-            # Corrupted DB — wipe and start fresh
-            import shutil
-            shutil.rmtree(db_path, ignore_errors=True)
-            os.makedirs(db_path, exist_ok=True)
-            self.db = chromadb.PersistentClient(path=db_path)
-            self.collection = self.db.get_or_create_collection(
-                name="porsche_docs",
-                metadata={"hnsw:space": "cosine"},
-            )
+        for attempt in range(3):
+            try:
+                self.db = chromadb.PersistentClient(path=db_path)
+                self.collection = self.db.get_or_create_collection(
+                    name="porsche_docs",
+                    metadata={"hnsw:space": "cosine"},
+                )
+                self.collection.count()
+                break
+            except Exception:
+                import shutil
+                shutil.rmtree(db_path, ignore_errors=True)
+                os.makedirs(db_path, exist_ok=True)
+                time.sleep(1)
         self.doc_dates: Dict[str, str] = {}
         self._bm25_ids: List[str] = []
         self._bm25_corpus: List[List[str]] = []

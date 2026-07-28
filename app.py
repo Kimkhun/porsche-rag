@@ -680,15 +680,24 @@ if "initialized" not in st.session_state:
         st.session_state.initialized = True
     except Exception as e:
         loading_placeholder.empty()
-        st.error(f"Failed to load: {e}")
-        if "JWT" in str(e) or "auth" in str(e).lower():
+        st.error(f"Startup error: {e}")
+        estr = str(e)
+        if "JWT" in estr or "auth" in estr.lower():
             st.error(
                 "GCP auth error — your `gcp-key.json` may be expired, the system clock may be wrong, "
                 "or the service account lacks Vertex AI permissions. "
-                "Try re-downloading the key from GCP Console."
             )
-        st.info("The app needs a valid GCP service account key at `gcp-key.json` to run.")
-        st.stop()
+        elif "database" in estr.lower() or "no such table" in estr.lower():
+            st.error(
+                "ChromaDB database issue — this can happen after a forced restart. "
+                "Use the **Force Re-sync** button below to rebuild the index from scratch."
+            )
+        else:
+            st.info("The app needs a valid GCP service account key at `gcp-key.json` to run.")
+        # Set fallback values so sidebar renders (with Force Re-sync button)
+        store = None
+        docs = []
+        chunks = 0
 else:
     store = get_vector_store()
     try:
