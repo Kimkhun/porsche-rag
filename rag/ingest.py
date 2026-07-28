@@ -151,10 +151,19 @@ def chunk_text(text: str, max_words: int = 80, overlap_sentences: int = 2) -> Li
     paragraphs = re.split(r"\n\s*\n", text.strip())
     chunks = []
     prev_tail: List[str] = []
+    pending_header = ""
     for para in paragraphs:
         para = para.strip()
         if not para:
             continue
+        words = para.split()
+        is_header = len(words) < 5
+        if is_header:
+            pending_header = (pending_header + " " + para).strip()
+            prev_tail = []
+            continue
+        para = (pending_header + " " + para).strip() if pending_header else para
+        pending_header = ""
         words = para.split()
         if len(words) <= max_words:
             chunk = para
@@ -186,6 +195,8 @@ def chunk_text(text: str, max_words: int = 80, overlap_sentences: int = 2) -> Li
                     final_chunk = " ".join(all_sents) + " " + final_chunk
                 chunks.append(final_chunk)
             prev_tail = sentences[-overlap_sentences:] if overlap_sentences else []
+    if pending_header:
+        chunks.append(pending_header)
     return chunks if chunks else [text]
 
 
